@@ -1,0 +1,136 @@
+body {
+  font-family: "Inter-Bold", Helvetica;
+  background-color: #111b36;
+  color: #aaaaaa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  max-height: 100vh;  
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.header {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 6rem 0 6rem 6rem;
+}
+
+.personal-info {
+  letter-spacing: -.025em;
+}
+
+h1, h2, .job-title, .course-title {
+  color: #E2E8F0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin: auto;
+  letter-spacing: -.025em;
+}
+
+.my-job-title {
+  margin-top: .75rem;
+  letter-spacing: -.025em;
+}
+
+.navigation {
+  padding: 6rem 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+
+.nav-item {
+  margin-right: 20px;
+  position: relative;
+  line-height: 1.9rem;
+}
+
+.navigation a:hover span,
+a.active span {
+  color: #E2E8F0;
+}
+
+
+.links-container {
+  position: absolute;
+  bottom: 6rem;
+  padding: 10px 0;
+}
+
+.links-container a {
+  padding: 5px;
+}
+
+.overlap-group-wrapper {
+  flex: 1;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 6em;
+}
+
+#about-me {
+  line-height: 1.5;
+}
+
+#professional-activities, #education {
+  padding-top: 2rem;
+}
+
+.resume-entry {
+  color: #aaaaaa;
+}
+
+.company-name {
+  color: #aaaaaa;
+}
+
+.date-range {
+  color: #aaaaaa;
+}
+
+.job-description {
+  color: #aaaaaa;
+}
+
+@media (max-width: 600px) {
+  body {
+    max-height: max-content;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .header {
+    flex: 100%;
+    padding-left: 6rem;
+  }
+
+  .links-container {
+    position: relative;
+    bottom: auto;
+  }
+
+  .overlap-group-wrapper  {
+    flex: 100%;
+    padding-right: 6rem;
+    overflow-y: initial;
+  }
+}
