@@ -109,7 +109,7 @@ a.active span {
   color: #aaaaaa;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 980px) {
   body {
     max-height: max-content;
   }
