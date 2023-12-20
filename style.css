@@ -17,7 +17,7 @@ body {
 .header {
   flex: 1;
   box-sizing: border-box;
-  padding: 6rem 0 6rem 6rem;
+  padding: 6rem 0 6rem 20rem;
 }
 
 .personal-info {
@@ -29,8 +29,8 @@ h1, h2, .job-title, .course-title {
 }
 
 h1 {
+  font-size: 250%;
   font-weight: 700;
-  font-size: 3rem;
   margin: auto;
   letter-spacing: -.025em;
 }
@@ -78,11 +78,11 @@ a.active span {
   padding: 5px;
 }
 
-.overlap-group-wrapper {
+.main {
   flex: 1;
   box-sizing: border-box;
   overflow-y: auto;
-  padding: 6em;
+  padding: 6rem 20rem 6rem 0;
 }
 
 #about-me {
@@ -112,15 +112,16 @@ a.active span {
 @media (max-width: 980px) {
   body {
     max-height: max-content;
+    font-size: 2rem;
   }
 
   .container {
     flex-direction: column;
   }
 
-  .header {
+  .header, .main {
     flex: 100%;
-    padding-left: 6rem;
+    padding: 10%;
   }
 
   .links-container {
@@ -128,9 +129,7 @@ a.active span {
     bottom: auto;
   }
 
-  .overlap-group-wrapper  {
-    flex: 100%;
-    padding-right: 6rem;
+  .main  {
     overflow-y: initial;
   }
 }
