@@ -1,0 +1,81 @@
+{
+    "personalInformation": {
+        "name": "Eduardo Schoepf",
+        "address": "",
+        "city": "Paris",
+        "phone": "+33652543966",
+        "email": "eduardo.schoepf@hotmail.com",
+        "desiredPosition": "Software Engineer",
+        "summary": "Passionate about software development, I am currently pursuing a bachelor's degree in Software Engineering and seeking a challenge as a full-stack developer. In my free time, I develop my coding skills. Currently, I am studying React Native and Node.JS."
+    },
+    "workExperience": [
+        {
+            "position": "IT Support",
+            "company": "Public administration",
+            "location": "Paris - FR",
+            "period": "2018 - Present",
+            "description": "Missions carried out: • analysis of XML flows to resolve support requests; • develop JavaScript browser extensions to improve service productivity; • contribute to the onboarding process and integration of trainees."
+        },
+        {
+            "position": "JavaScript Developer",
+            "company": "Mobixio",
+            "location": "Montpellier - FR",
+            "period": "2017 - 2018",
+            "description": "Missions carried out: • develop a cross-platform mobile application with Ionic, Cordova and AngularJS; • carry out feasibility studies; • integrate mapping tools into the mobile application."
+        },
+        {
+            "position": "Software developer internship",
+            "company": "O+ Studio",
+            "location": "Montpellier - FR",
+            "period": "2016 (3 months)",
+            "description": "This end-of-studies internship, lasting ten weeks, carried out within the company O plus Studio, punctuated my training as a software developer followed at Objectif 3W. The work done during this internship allowed me to put my training into practice. Missions and tasks carried out: • model a MySQL database; • create a web application in PHP5; • implement unit tests."
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Software Engineer",
+            "institution": "UNINTER",
+            "type": "Distance learning Bachelors",
+            "location": "Santa Cruz do Sul - BR",
+            "period": "2023 - 2027",
+            "description": "The Software Engineering degree course focuses on the following areas: software development, software project management, architecture, testing and other activities in the software life cycle."
+        },
+        {
+            "degree": "Introduction to Computer Science",
+            "institution": "Harvard University",
+            "type": "MOOC",
+            "location": "",
+            "period": "2023",
+            "description": "TThis program covers concepts like abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. An introduction to a number of languages, including C, Python, SQL and JavaScript, as well as CSS and HTML."
+        },
+        {
+            "degree": "Professional Title of Software Developer",
+            "institution": "OBJECTIF 3W",
+            "location": "Montpellier - FR",
+            "period": "2015  - 2016",
+            "description": "Proficient in a diverse range of programming languages, including XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, and UML. Skilled in MySQL DBMS, method of analysis and design of MERISE systems, and experienced in object-oriented programming."
+        }
+    ],
+    "skills": [
+        "Full Stack",
+        "JavaScript",
+        "NodeJS"
+    ],
+    "languages": [
+        {
+            "language": "French",
+            "level": "Advanced"
+        },
+        {
+            "language": "Portugais",
+            "level": "Advanced"
+        }
+    ],
+    "certifications": [
+        {
+            "certificate": "",
+            "institution": "",
+            "completionYear": ""
+        }
+    ]
+}
