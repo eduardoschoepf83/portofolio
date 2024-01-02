@@ -48,7 +48,7 @@ interface Profile {
 // Function to load and process the JSON
 async function loadAndProcessJSON() {
   try {
-    const response = await fetch('../profile.json');
+    const response = await fetch('./profile.json');
     const profileData: Profile = await response.json();
 
     // Calling functions to add data to HTML
