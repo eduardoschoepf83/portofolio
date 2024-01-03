@@ -8,6 +8,11 @@ interface PersonalInformation {
   summary: string;
 }
 
+interface SocialMedias {
+  name: string;
+  link: string;
+}
+
 interface WorkExperience {
   position: string;
   company: string;
@@ -38,6 +43,7 @@ interface Certification {
 
 interface Profile {
   personalInformation: PersonalInformation;
+  socialMedias: SocialMedias[];
   workExperience: WorkExperience[];
   education: Education[];
   skills: string[];
@@ -53,6 +59,7 @@ async function loadAndProcessJSON() {
 
     // Calling functions to add data to HTML
     addPersonalInformation(profileData.personalInformation);
+    addSocialMediaLinks(profileData.socialMedias);
     addSkills(profileData.skills);
     addWorkExperience(profileData.workExperience);
     addEducation(profileData.education);
@@ -62,7 +69,6 @@ async function loadAndProcessJSON() {
   }
 }
 
-// The rest of the code remains the same, but now the functions receive the profileData as a parameter
 function addPersonalInformation(personalInformation: PersonalInformation) {
   const divInformacoesPessoais = document.getElementById("personalInformation");
   if (divInformacoesPessoais) {
@@ -70,6 +76,23 @@ function addPersonalInformation(personalInformation: PersonalInformation) {
       <h1 class="name">${personalInformation.name}</h1>
       <h2 class="my-job-title">${personalInformation.desiredPosition}</h2>
     `;
+  }
+}
+
+function addSocialMediaLinks(socialMedias: SocialMedias[]) {
+  const socialMediasHTML = document.getElementById('social-medias');
+  if(socialMediasHTML) {
+      let socialMediasConcat = "";
+      socialMedias.forEach(sm => {
+        const iconName = sm.name === "linkedin" ? "fa-linkedin" : "fa-square-github";
+
+        socialMediasConcat += `
+            <a href="${sm.link}" target="_blank">
+                <i class="fa-brands ${iconName} fa-2xl"></i>
+            </a>`;
+    });
+
+    socialMediasHTML.innerHTML = socialMediasConcat;
   }
 }
 
