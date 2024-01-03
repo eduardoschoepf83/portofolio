@@ -8,16 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// Function to load and process the JSON
 function loadAndProcessJSON() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield fetch('./profile.json');
             const profileData = yield response.json();
-            // Calling functions to add data to HTML
             addPersonalInformation(profileData.personalInformation);
-            addSocialMediaLinks(profileData.socialMedias);
             addSkills(profileData.skills);
+            addSocialMediaLinks(profileData.socialMedias);
+            addAboutMe(profileData.aboutMe);
             addWorkExperience(profileData.workExperience);
             addEducation(profileData.education);
         }
@@ -27,12 +26,27 @@ function loadAndProcessJSON() {
     });
 }
 function addPersonalInformation(personalInformation) {
-    const divInformacoesPessoais = document.getElementById("personalInformation");
+    const divInformacoesPessoais = document.getElementById('personalInformation');
     if (divInformacoesPessoais) {
         divInformacoesPessoais.innerHTML = `
-      <h1 class="name">${personalInformation.name}</h1>
-      <h2 class="my-job-title">${personalInformation.desiredPosition}</h2>
+      <h1 class='name'>${personalInformation.name}</h1>
+      <h2 class='my-job-title'>${personalInformation.desiredPosition}</h2>
     `;
+    }
+}
+function addSkills(skills) {
+    const divExperienciaProfissional = document.getElementById("personalInformation");
+    if (divExperienciaProfissional) {
+        let skillConcat = '';
+        skills.forEach((skill) => {
+            skillConcat += ' ' + skill + ' |';
+        });
+        if (skillConcat.length > 0) {
+            skillConcat = skillConcat.slice(0, -1);
+        }
+        let skillHTML = document.createElement('p');
+        skillHTML.textContent = skillConcat;
+        divExperienciaProfissional.appendChild(skillHTML);
     }
 }
 function addSocialMediaLinks(socialMedias) {
@@ -40,64 +54,55 @@ function addSocialMediaLinks(socialMedias) {
     if (socialMediasHTML) {
         let socialMediasConcat = "";
         socialMedias.forEach(sm => {
-            const iconName = sm.name === "linkedin" ? "fa-linkedin" : "fa-square-github";
+            const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
             socialMediasConcat += `
-            <a href="${sm.link}" target="_blank">
-                <i class="fa-brands ${iconName} fa-2xl"></i>
-            </a>`;
+        <a href='${sm.link}' target='_blank'>
+          <i class='fa-brands ${iconName} fa-2xl'></i>
+        </a>
+      `;
         });
         socialMediasHTML.innerHTML = socialMediasConcat;
     }
 }
-function addSkills(skills) {
-    const divExperienciaProfissional = document.getElementById("personalInformation");
-    if (divExperienciaProfissional) {
-        let skillConcat = "";
-        skills.forEach((skill) => {
-            skillConcat += " " + skill + " |";
-        });
-        if (skillConcat.length > 0) {
-            skillConcat = skillConcat.slice(0, -1);
-        }
-        let skillHTML = document.createElement("p");
-        skillHTML.textContent = skillConcat;
-        divExperienciaProfissional.appendChild(skillHTML);
+function addAboutMe(aboutMe) {
+    const aboutMeSection = document.getElementById('about-me');
+    if (aboutMeSection) {
+        aboutMeSection.innerHTML = `<p>${aboutMe.summary}</p>`;
     }
 }
 function addWorkExperience(workExperience) {
-    const sectionWorkExperience = document.getElementById("workExperience");
-    let workExperienceHTML = "<h2>Work Experience</h2>";
-    workExperience.forEach((work) => {
-        let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
-        workExperienceHTML += `
-    <div class="resume-entry">
-          <div class="date-range">${work.period}</div>
-          <div class="job-title">${work.position}</div>
-          <div class="company-name">${work.company}, ${work.location}</div>
-          <p class="job-description">${description}</p>
-        </div>
-    `;
-    });
+    const sectionWorkExperience = document.getElementById('workExperience');
     if (sectionWorkExperience) {
+        let workExperienceHTML = '<h2>Work Experience</h2>';
+        workExperience.forEach((work) => {
+            let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
+            workExperienceHTML += `
+        <div class='resume-entry'>
+          <div class='date-range'>${work.period}</div>
+          <div class='job-title'>${work.position}</div>
+          <div class='company-name'>${work.company}, ${work.location}</div>
+          <p class='job-description'>${description}</p>
+        </div>
+      `;
+        });
         sectionWorkExperience.innerHTML = workExperienceHTML;
     }
 }
 function addEducation(education) {
-    const sectionEducation = document.getElementById("education");
-    let educationHTML = "<h2>Education</h2>";
+    const sectionEducation = document.getElementById('education');
+    let educationHTML = '<h2>Education</h2>';
     education.forEach((elem) => {
         educationHTML += `
-    <div class="resume-entry">
-          <div class="date-range">${elem.period}</div>
-          <div class="course-title">${elem.degree}</div>
-          <div class="educational-institution">${elem.institution}</div>
-          <p class="course-description">${elem.description}</p>
-        </div>
+      <div class='resume-entry'>
+        <div class='date-range'>${elem.period}</div>
+        <div class='course-title'>${elem.degree}</div>
+        <div class='educational-institution'>${elem.institution}</div>
+        <p class='course-description'>${elem.description}</p>
+      </div>
     `;
     });
     if (sectionEducation) {
         sectionEducation.innerHTML = educationHTML;
     }
 }
-// Calling the function to load and process the JSON
 loadAndProcessJSON();

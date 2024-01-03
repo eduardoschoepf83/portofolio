@@ -5,9 +5,12 @@
         "city": "Paris",
         "phone": "+33652543966",
         "email": "eduardo.schoepf@hotmail.com",
-        "desiredPosition": "Software Engineer",
+        "desiredPosition": "Software Engineer"
+    },
+    "aboutMe": {
         "summary": "Passionate about software development, I am currently pursuing a bachelor's degree in Software Engineering and seeking a challenge as a full-stack developer. In my free time, I develop my coding skills. Currently, I am studying React Native and Node.JS."
     },
+    
     "socialMedias": [
         {
             "name":"linkedin", 
