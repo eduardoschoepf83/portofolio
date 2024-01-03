@@ -74,6 +74,7 @@ async function loadAndProcessJSON() {
 
 function addPersonalInformation(personalInformation: PersonalInformation) {
   const divInformacoesPessoais = document.getElementById('personalInformation');
+
   if (divInformacoesPessoais) {
     divInformacoesPessoais.innerHTML = `
       <h1 class='name'>${personalInformation.name}</h1>
@@ -84,24 +85,32 @@ function addPersonalInformation(personalInformation: PersonalInformation) {
 
 function addSkills(skills: string[]) {
   const divExperienciaProfissional = document.getElementById("personalInformation");
+
   if (divExperienciaProfissional) {
     let skillConcat = '';
+
     skills.forEach((skill) => {
       skillConcat += ' ' + skill + ' |';
     })
+
     if (skillConcat.length > 0) {
       skillConcat = skillConcat.slice(0, -1);
     }
+
     let skillHTML = document.createElement('p');
+
     skillHTML.textContent = skillConcat;
+
     divExperienciaProfissional.appendChild(skillHTML);
   }
 }
 
 function addSocialMediaLinks(socialMedias: SocialMedias[]) {
   const socialMediasHTML = document.getElementById('social-medias');
+
   if (socialMediasHTML) {
-    let socialMediasConcat = "";
+    let socialMediasConcat = '';
+
     socialMedias.forEach(sm => {
       const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
 
@@ -118,6 +127,7 @@ function addSocialMediaLinks(socialMedias: SocialMedias[]) {
 
 function addAboutMe(aboutMe: AboutMe) {
   const aboutMeSection = document.getElementById('about-me');
+
   if (aboutMeSection) {
     aboutMeSection.innerHTML = `<p>${aboutMe.summary}</p>`;
   }
@@ -125,10 +135,13 @@ function addAboutMe(aboutMe: AboutMe) {
 
 function addWorkExperience(workExperience: WorkExperience[]) {
   const sectionWorkExperience = document.getElementById('workExperience');
+
   if (sectionWorkExperience) {
     let workExperienceHTML = '<h2>Work Experience</h2>';
+
     workExperience.forEach((work) => {
       let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
+
       workExperienceHTML += `
         <div class='resume-entry'>
           <div class='date-range'>${work.period}</div>
@@ -138,24 +151,28 @@ function addWorkExperience(workExperience: WorkExperience[]) {
         </div>
       `;
     });
+
     sectionWorkExperience.innerHTML = workExperienceHTML;
   }
 }
 
 function addEducation(education: Education[]) {
   const sectionEducation = document.getElementById('education');
-  let educationHTML = '<h2>Education</h2>';
-  education.forEach((elem) => {
-    educationHTML += `
-      <div class='resume-entry'>
-        <div class='date-range'>${elem.period}</div>
-        <div class='course-title'>${elem.degree}</div>
-        <div class='educational-institution'>${elem.institution}</div>
-        <p class='course-description'>${elem.description}</p>
-      </div>
-    `;
-  })
+
   if (sectionEducation) {
+    let educationHTML = '<h2>Education</h2>';
+    
+    education.forEach((elem) => {
+      educationHTML += `
+        <div class='resume-entry'>
+          <div class='date-range'>${elem.period}</div>
+          <div class='course-title'>${elem.degree}</div>
+          <div class='educational-institution'>${elem.institution}</div>
+          <p class='course-description'>${elem.description}</p>
+        </div>
+      `;
+    })
+  
     sectionEducation.innerHTML = educationHTML;
   }
 }

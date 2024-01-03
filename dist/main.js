@@ -52,7 +52,7 @@ function addSkills(skills) {
 function addSocialMediaLinks(socialMedias) {
     const socialMediasHTML = document.getElementById('social-medias');
     if (socialMediasHTML) {
-        let socialMediasConcat = "";
+        let socialMediasConcat = '';
         socialMedias.forEach(sm => {
             const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
             socialMediasConcat += `
@@ -90,18 +90,18 @@ function addWorkExperience(workExperience) {
 }
 function addEducation(education) {
     const sectionEducation = document.getElementById('education');
-    let educationHTML = '<h2>Education</h2>';
-    education.forEach((elem) => {
-        educationHTML += `
-      <div class='resume-entry'>
-        <div class='date-range'>${elem.period}</div>
-        <div class='course-title'>${elem.degree}</div>
-        <div class='educational-institution'>${elem.institution}</div>
-        <p class='course-description'>${elem.description}</p>
-      </div>
-    `;
-    });
     if (sectionEducation) {
+        let educationHTML = '<h2>Education</h2>';
+        education.forEach((elem) => {
+            educationHTML += `
+        <div class='resume-entry'>
+          <div class='date-range'>${elem.period}</div>
+          <div class='course-title'>${elem.degree}</div>
+          <div class='educational-institution'>${elem.institution}</div>
+          <p class='course-description'>${elem.description}</p>
+        </div>
+      `;
+        });
         sectionEducation.innerHTML = educationHTML;
     }
 }
