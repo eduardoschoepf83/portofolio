@@ -11,11 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function loadAndProcessJSON() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('./profile.json', {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            const response = yield fetch('./profile.json');
             const profileData = yield response.json();
             addPersonalInformation(profileData.personalInformation);
             addSkills(profileData.skills);
