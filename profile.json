@@ -27,14 +27,14 @@
             "company": "Public administration",
             "location": "Paris - FR",
             "period": "2018 - Present",
-            "description": "Missions carried out: • analysis of XML flows to resolve support requests; • develop JavaScript browser extensions to improve service productivity; • contribute to the onboarding process and integration of trainees."
+            "description": "In my current role, I specialize in XML flow analysis and incident ticket resolution. In addition, I actively contribute to the onboarding process, integrating new colleagues into the team. This hands-on experience has not only honed my technical skills, but also underlined the importance of effective teamwork and communication."
         },
         {
             "position": "JavaScript Developer",
             "company": "Mobixio",
             "location": "Montpellier - FR",
             "period": "2017 - 2018",
-            "description": "Missions carried out: • develop a cross-platform mobile application with Ionic, Cordova and AngularJS; • carry out feasibility studies; • integrate mapping tools into the mobile application."
+            "description": "I began my career at a startup in Montpellier, in the south of France, where I contributed to a project focused on developing a cross-platform mobile application. This endeavor involved working with Ionic, Cordova, and AngularJS. The experience was crucial to my understanding of software development, shaping my skills in version control using Git. Additionally, I delved into the integration of JavaScript libraries, including Leaflet—an open-source library for interactive maps."
         },
         {
             "position": "Software developer internship",
@@ -59,7 +59,7 @@
             "type": "MOOC",
             "location": "",
             "period": "2023",
-            "description": "TThis program covers concepts like abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. An introduction to a number of languages, including C, Python, SQL and JavaScript, as well as CSS and HTML."
+            "description": "This program covers concepts like abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. An introduction to a number of languages, including C, Python, SQL and JavaScript, as well as CSS and HTML."
         },
         {
             "degree": "Professional Title of Software Developer",
