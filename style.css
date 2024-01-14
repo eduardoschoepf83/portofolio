@@ -83,6 +83,7 @@ a.active span {
   box-sizing: border-box;
   overflow-y: auto;
   padding: 6rem 20rem 6rem 0;
+  text-align: justify;
 }
 
 #about-me {
@@ -107,7 +108,6 @@ a.active span {
 
 .job-description {
   color: #aaaaaa;
-  text-align: justify;
 }
 
 @media (max-width: 980px) {
