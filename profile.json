@@ -54,7 +54,7 @@
             "description": "The Software Engineering degree course focuses on the following areas: software development, software project management, architecture, testing and other activities in the software life cycle."
         },
         {
-            "degree": "Introduction to Computer Science",
+            "degree": "MOOC Introduction to Computer Science",
             "institution": "CS50 - Harvard University",
             "type": "MOOC",
             "location": "",
