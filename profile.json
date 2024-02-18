@@ -46,7 +46,7 @@
     ],
     "education": [
         {
-            "degree": "Bachelor of Software Engineer",
+            "degree": "Bachelor's degree in software engineering",
             "institution": "UNINTER",
             "type": "Distance learning Bachelors",
             "location": "Santa Cruz do Sul - BR",
@@ -64,6 +64,7 @@
         {
             "degree": "Professional Title of Software Developer",
             "institution": "OBJECTIF 3W",
+            "type": "Professional Title BAC +2",
             "location": "Montpellier - FR",
             "period": "2015  - 2016",
             "description": "Proficient in a diverse range of programming languages, including XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, and UML. Skilled in MySQL DBMS, method of analysis and design of MERISE systems, and experienced in object-oriented programming."
