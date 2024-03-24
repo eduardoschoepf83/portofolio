@@ -1,1 +1,1 @@
-https://eduardoschoepf.github.io/portofolio/
+https://eduardoschoepf.github.io/portfolio/
