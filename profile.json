@@ -10,7 +10,20 @@
     "aboutMe": {
         "summary": "Hi there! 👋 \nI'm Eduardo Schoepf, and my journey in the world of software development began in 2015. Since then, I've been on a path filled with challenges and achievements that have solidified my passion for the technology field. \n Beyond code, I'm a world explorer, believing that diversity of experiences is the key to creativity. I enjoy teamwork, where communication is the secret to successful challenges. And, of course, I love challenges, as each bug is an opportunity to learn something new! I'm open to new opportunities as a SAP ABAP Consultant. Let's create something amazing together! 🚀"
     },
-    
+    "mediaLinks": [
+        {
+            "name": "PT",
+            "address": "/documents/cv_eduardo_schoepf_pt.pdf"
+        },
+        {
+            "name": "EN",
+            "address": "/documents/cv_eduardo_schoepf_en.pdf"
+        },
+        {
+            "name": "FR",
+            "address": "/documents/cv_eduardo_schoepf_fr.pdf"
+        }
+    ],
     "socialMedias": [
         {
             "name":"linkedin", 

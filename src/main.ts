@@ -7,6 +7,11 @@ interface PersonalInformation {
   desiredPosition: string;
 }
 
+interface MediaLinks {
+  name: string;
+  address: string;
+}
+
 interface SocialMedias {
   name: string;
   link: string;
@@ -47,6 +52,7 @@ interface Certification {
 interface Profile {
   personalInformation: PersonalInformation;
   skills: string[];
+  mediaLinks: MediaLinks[];
   socialMedias: SocialMedias[];
   aboutMe: AboutMe;
   workExperience: WorkExperience[];
@@ -57,11 +63,12 @@ interface Profile {
 
 async function loadAndProcessJSON() {
   try {
-    const response = await fetch('./profile.json');
+    const response = await fetch("./profile.json");
     const profileData: Profile = await response.json();
 
     addPersonalInformation(profileData.personalInformation);
     addSkills(profileData.skills);
+    addMediasForDownload(profileData.mediaLinks);
     addSocialMediaLinks(profileData.socialMedias);
     addAboutMe(profileData.aboutMe);
     addWorkExperience(profileData.workExperience);
@@ -98,11 +105,32 @@ function addSkills(skills: string[]) {
     }
 
     let skillHTML = document.createElement('p');
-
     skillHTML.textContent = skillConcat;
 
     divExperienciaProfissional.appendChild(skillHTML);
   }
+}
+
+function addMediasForDownload(mediaLinks: MediaLinks[] ) {
+  const divInformacoesPessoais = document.getElementById('personalInformation');
+
+  if (divInformacoesPessoais) {
+    let mediaLinksHTML = document.createElement("p");
+    mediaLinksHTML.textContent = "CV download : ";
+
+    mediaLinks.forEach( ml => {
+      let buttonElement = document.createElement('button');
+      buttonElement.textContent = ml.name;
+
+      let anchorElement = document.createElement('a');
+      anchorElement.href = ml.address;
+      anchorElement.appendChild(buttonElement);
+      mediaLinksHTML.appendChild(anchorElement);
+    });
+
+    divInformacoesPessoais.appendChild(mediaLinksHTML);
+  }
+
 }
 
 function addSocialMediaLinks(socialMedias: SocialMedias[]) {

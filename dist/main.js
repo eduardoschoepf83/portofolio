@@ -11,10 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function loadAndProcessJSON() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('./profile.json');
+            const response = yield fetch("./profile.json");
             const profileData = yield response.json();
             addPersonalInformation(profileData.personalInformation);
             addSkills(profileData.skills);
+            addMediasForDownload(profileData.mediaLinks);
             addSocialMediaLinks(profileData.socialMedias);
             addAboutMe(profileData.aboutMe);
             addWorkExperience(profileData.workExperience);
@@ -47,6 +48,22 @@ function addSkills(skills) {
         let skillHTML = document.createElement('p');
         skillHTML.textContent = skillConcat;
         divExperienciaProfissional.appendChild(skillHTML);
+    }
+}
+function addMediasForDownload(mediaLinks) {
+    const divInformacoesPessoais = document.getElementById('personalInformation');
+    if (divInformacoesPessoais) {
+        let mediaLinksHTML = document.createElement("p");
+        mediaLinksHTML.textContent = "CV download : ";
+        mediaLinks.forEach(ml => {
+            let buttonElement = document.createElement('button');
+            buttonElement.textContent = ml.name;
+            let anchorElement = document.createElement('a');
+            anchorElement.href = ml.address;
+            anchorElement.appendChild(buttonElement);
+            mediaLinksHTML.appendChild(anchorElement);
+        });
+        divInformacoesPessoais.appendChild(mediaLinksHTML);
     }
 }
 function addSocialMediaLinks(socialMedias) {

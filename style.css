@@ -56,6 +56,12 @@ a {
   color: #aaaaaa;
 }
 
+.personal-info a button {
+  height: 2rem;
+  width: 4rem;
+  margin: 5px;
+}
+
 .nav-item {
   margin-right: 20px;
   position: relative;
