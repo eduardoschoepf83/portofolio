@@ -73,6 +73,7 @@ async function loadAndProcessJSON() {
     addAboutMe(profileData.aboutMe);
     addWorkExperience(profileData.workExperience);
     addEducation(profileData.education);
+    addCopyright();
 
   } catch (error) {
     console.error('Error loading the JSON file:', error);
@@ -203,6 +204,14 @@ function addEducation(education: Education[]) {
   
     sectionEducation.innerHTML = educationHTML;
   }
+}
+
+function addCopyright() {
+  const currentYear = new Date().getFullYear();
+  const copyright = document.getElementById('copyright');
+  if(copyright) {
+    copyright.innerHTML = `© ${currentYear} Eduardo Schoepf`;
+  }  
 }
 
 loadAndProcessJSON();

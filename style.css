@@ -4,13 +4,12 @@ body {
   color: #aaaaaa;
   margin: 0;
   padding: 0;
-  display: flex;
+  
   max-height: 100vh;  
 }
 
 .container {
   display: flex;
-  flex: 1;
   overflow: hidden;
 }
 
@@ -88,8 +87,18 @@ a.active span {
   flex: 1;
   box-sizing: border-box;
   overflow-y: auto;
-  padding: 6rem 20rem 6rem 0;
+  margin: 6rem 20rem 6rem 0;
   text-align: justify;
+  height: 75vh;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+#copyright {
+  text-align: center;
+  color: initial;
 }
 
 #about-me {
@@ -116,6 +125,14 @@ a.active span {
   color: #aaaaaa;
 }
 
+footer {
+    height: 5vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 980px) {
   body {
     max-height: max-content;
@@ -138,5 +155,6 @@ a.active span {
 
   .main  {
     overflow-y: initial;
+    margin: 0;
   }
 }
