@@ -124,7 +124,8 @@ function addMediasForDownload(mediaLinks: MediaLinks[] ) {
       buttonElement.textContent = ml.name;
 
       let anchorElement = document.createElement('a');
-      anchorElement.href = ml.address;
+      anchorElement.href = window.location.pathname + ml.address;
+      anchorElement.target = '_blank';
       anchorElement.appendChild(buttonElement);
       mediaLinksHTML.appendChild(anchorElement);
     });

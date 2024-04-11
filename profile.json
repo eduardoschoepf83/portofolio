@@ -13,15 +13,15 @@
     "mediaLinks": [
         {
             "name": "PT",
-            "address": "/documents/cv_eduardo_schoepf_pt.pdf"
+            "address": "documents/cv_eduardo_schoepf_pt.pdf"
         },
         {
             "name": "EN",
-            "address": "/documents/cv_eduardo_schoepf_en.pdf"
+            "address": "documents/cv_eduardo_schoepf_en.pdf"
         },
         {
             "name": "FR",
-            "address": "/documents/cv_eduardo_schoepf_fr.pdf"
+            "address": "documents/cv_eduardo_schoepf_fr.pdf"
         }
     ],
     "socialMedias": [
