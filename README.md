@@ -1,4 +1,5 @@
 # Portfólio 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Bem-vindo ao meu portfólio! Este projeto visa fornecer um exemplo simples e fácil de adaptar para quem está procurando construir seu próprio portfólio pessoal. Este projeto consiste em um site estático e basta modificar os dados do arquivo `profile.json` que se encontra na raiz do projeto.
 
