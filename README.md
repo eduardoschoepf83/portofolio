@@ -1,7 +1,7 @@
-# Portfólio 
+# Bem-vindo ao meu portfólio
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Bem-vindo ao meu portfólio! Este projeto visa fornecer um exemplo simples e fácil de adaptar para quem está procurando construir seu próprio portfólio pessoal. Este projeto consiste em um site estático e basta modificar os dados do arquivo `profile.json` que se encontra na raiz do projeto.
+Este projeto visa fornecer um exemplo simples de portfólio para quem está procurando construir seu próprio portfólio pessoal. Trata-se de um site estático, e para personalizá-lo com seus dados, basta editar o arquivo `profile.json` localizado na raiz do projeto.
 
 Consulte a pagina aqui: https://eduardoschoepf.github.io/portfolio/
 
@@ -22,16 +22,12 @@ Se você fizer modificações no código TypeScript, precisará compilar para Ja
 
 ```bash
 npm install -g typescript
-# ou
-yarn global add typescript
 ```
 
 Ou adicione o TypeScript como uma dependência de desenvolvimento:
 
 ```bash
 npm install --save-dev typescript
-# ou
-yarn add --dev typescript
 ```
 
 Compile o código TypeScript:
