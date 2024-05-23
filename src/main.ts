@@ -68,7 +68,7 @@ async function loadAndProcessJSON() {
 
     addPersonalInformation(profileData.personalInformation);
     addSkills(profileData.skills);
-    addMediasForDownload(profileData.mediaLinks);
+    /*addMediasForDownload(profileData.mediaLinks);*/
     addSocialMediaLinks(profileData.socialMedias);
     addAboutMe(profileData.aboutMe);
     addWorkExperience(profileData.workExperience);
