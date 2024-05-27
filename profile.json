@@ -83,6 +83,14 @@
             "description": "Proficient in a diverse range of programming languages, including XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, and UML. Skilled in MySQL DBMS, method of analysis and design of MERISE systems, and experienced in object-oriented programming."
         }
     ],
+    "projects": [
+        {
+            "title": "Java Spring API",
+            "description": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
+            "img": "webapp_img.jpg",
+            "url": "https://github.com/eduardoschoepf/api"
+        }
+    ],
     "skills": [
         "Full Stack",
         "JavaScript",

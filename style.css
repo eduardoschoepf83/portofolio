@@ -4,7 +4,6 @@ body {
   color: #aaaaaa;
   margin: 0;
   padding: 0;
-  
   max-height: 100vh;  
 }
 
@@ -24,7 +23,7 @@ body {
   letter-spacing: -.025em;
 }
 
-h1, h2, .job-title, .course-title {
+h1, h2, .job-title, .course-title, .project-title {
   color: #E2E8F0;
 }
 
@@ -106,24 +105,8 @@ a.active span {
   line-height: 1.5;
 }
 
-#professional-activities, #education {
+#professional-activities, #education, #projects {
   padding-top: 2rem;
-}
-
-.resume-entry {
-  color: #aaaaaa;
-}
-
-.company-name {
-  color: #aaaaaa;
-}
-
-.date-range {
-  color: #aaaaaa;
-}
-
-.job-description {
-  color: #aaaaaa;
 }
 
 footer {

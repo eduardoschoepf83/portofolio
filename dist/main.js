@@ -20,6 +20,7 @@ function loadAndProcessJSON() {
             addAboutMe(profileData.aboutMe);
             addWorkExperience(profileData.workExperience);
             addEducation(profileData.education);
+            addProjects(profileData.projects);
             addCopyright();
         }
         catch (error) {
@@ -90,7 +91,7 @@ function addAboutMe(aboutMe) {
     }
 }
 function addWorkExperience(workExperience) {
-    const sectionWorkExperience = document.getElementById('workExperience');
+    const sectionWorkExperience = document.getElementById('professional-activities');
     if (sectionWorkExperience) {
         let workExperienceHTML = '<h2>Work Experience</h2>';
         workExperience.forEach((work) => {
@@ -122,6 +123,24 @@ function addEducation(education) {
       `;
         });
         sectionEducation.innerHTML = educationHTML;
+    }
+}
+function addProjects(projects) {
+    const sectionProjects = document.getElementById('projects');
+    if (sectionProjects) {
+        let projectsHTML = '<h2>Projects</h2>';
+        projects.forEach((elem) => {
+            projectsHTML += `
+        <div class='resume-entry'>
+          <div class='project-title'>${elem.title}</div>
+          <p class='project-description'>${elem.description}</p>
+          <a href=${elem.url} target='_blank'>
+            <img src='img/${elem.img}' alt='Project Image'>
+          </a>
+        </div>
+      `;
+        });
+        sectionProjects.innerHTML = projectsHTML;
     }
 }
 function addCopyright() {

@@ -38,6 +38,13 @@ interface Education {
   description: string;
 }
 
+interface Projects {
+  title: string;
+  description: string;
+  img: string;
+  url: string;
+}
+
 interface Language {
   language: string;
   level: string;
@@ -57,6 +64,7 @@ interface Profile {
   aboutMe: AboutMe;
   workExperience: WorkExperience[];
   education: Education[];
+  projects: Projects[];
   languages: Language[];
   certifications: Certification[];
 }
@@ -73,6 +81,7 @@ async function loadAndProcessJSON() {
     addAboutMe(profileData.aboutMe);
     addWorkExperience(profileData.workExperience);
     addEducation(profileData.education);
+    addProjects(profileData.projects);
     addCopyright();
 
   } catch (error) {
@@ -164,7 +173,7 @@ function addAboutMe(aboutMe: AboutMe) {
 }
 
 function addWorkExperience(workExperience: WorkExperience[]) {
-  const sectionWorkExperience = document.getElementById('workExperience');
+  const sectionWorkExperience = document.getElementById('professional-activities');
 
   if (sectionWorkExperience) {
     let workExperienceHTML = '<h2>Work Experience</h2>';
@@ -204,6 +213,28 @@ function addEducation(education: Education[]) {
     })
   
     sectionEducation.innerHTML = educationHTML;
+  }
+}
+
+function addProjects(projects: Projects[]) {
+  const sectionProjects = document.getElementById('projects');
+
+  if (sectionProjects) {
+    let projectsHTML = '<h2>Projects</h2>';
+    
+    projects.forEach((elem) => {
+      projectsHTML += `
+        <div class='resume-entry'>
+          <div class='project-title'>${elem.title}</div>
+          <p class='project-description'>${elem.description}</p>
+          <a href=${elem.url} target='_blank'>
+            <img src='img/${elem.img}' alt='Project Image'>
+          </a>
+        </div>
+      `;
+    })
+
+    sectionProjects.innerHTML = projectsHTML;
   }
 }
 
