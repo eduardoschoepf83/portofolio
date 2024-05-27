@@ -86,9 +86,15 @@
     "projects": [
         {
             "title": "Java Spring API",
+            "description": "Creation of an API with starters such as Spring Web for web functionality, Spring Data JPA for data persistence management, and H2 Database for an in-memory database. Configuration of a Controller package for REST controllers, a Service package for business logic, a Repository package for interactions with the database, and a model package for entities. In the Controller package, create a class to manage CRUD (Create, Read, Update, Delete) operations.",
+            "img": "api_img.jpg",
+            "url": "https://github.com/eduardoschoepf/api"
+        },
+        {
+            "title": "Java Spring WebApp",
             "description": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
             "img": "webapp_img.jpg",
-            "url": "https://github.com/eduardoschoepf/api"
+            "url": "https://github.com/eduardoschoepf/webapp"
         }
     ],
     "skills": [

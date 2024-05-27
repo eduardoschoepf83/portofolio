@@ -96,6 +96,10 @@ a.active span {
   display: none;
 }
 
+.resume-entry {
+  margin-top: 50px;
+}
+
 #copyright {
   text-align: center;
   color: initial;
