@@ -96,8 +96,9 @@ a.active span {
   display: none;
 }
 
-.resume-entry {
-  margin-top: 50px;
+img {
+  border-radius: 10px;
+  margin: 30px 0 10px 0;
 }
 
 #copyright {

@@ -225,11 +225,11 @@ function addProjects(projects: Projects[]) {
     projects.forEach((elem) => {
       projectsHTML += `
         <div class='resume-entry'>
-          <div class='project-title'>${elem.title}</div>
-          <p class='project-description'>${elem.description}</p>
           <a href=${elem.url} target='_blank'>
             <img src='img/${elem.img}' alt='Project Image'>
           </a>
+          <div class='project-title'>${elem.title}</div>
+          <p class='project-description'>${elem.description}</p>
         </div>
       `;
     })
