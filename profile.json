@@ -95,6 +95,12 @@
             "description": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
             "img": "webapp_img.jpg",
             "url": "https://github.com/eduardoschoepf/webapp"
+        },
+        {
+            "title": "Movies APP",
+            "description": "This application was developed as a result of my studies in React Native. The application connects to the TMDB API to retrieve information on movies and TV shows.",
+            "img": "movies_img.jpg",
+            "url": "https://github.com/eduardoschoepf/movies"
         }
     ],
     "skills": [
