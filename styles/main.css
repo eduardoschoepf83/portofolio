@@ -1,0 +1,19 @@
+#about-me {
+    line-height: 1.5;
+}
+
+#professional-activities,
+#education,
+#projects {
+    padding-top: 2rem;
+}
+
+.links-container {
+    position: absolute;
+    bottom: 6rem;
+    padding: 10px 0;
+}
+
+.links-container a {
+    padding: 5px;
+}

@@ -1,0 +1,42 @@
+.header {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 6rem 0 6rem 20rem;
+}
+
+.personal-info {
+    letter-spacing: -.025em;
+}
+
+h1 {
+    font-size: 250%;
+    font-weight: 700;
+    margin: auto;
+    letter-spacing: -.025em;
+}
+
+.my-job-title {
+    margin-top: .75rem;
+    letter-spacing: -.025em;
+}
+
+.navigation {
+    padding: 6rem 0;
+}
+
+.nav-item {
+    margin-right: 20px;
+    position: relative;
+    line-height: 1.9rem;
+}
+
+.navigation a:hover span,
+a.active span {
+    color: #E2E8F0;
+}
+
+.personal-info a button {
+    height: 2rem;
+    width: 4rem;
+    margin: 5px;
+}

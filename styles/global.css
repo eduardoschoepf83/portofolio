@@ -1,0 +1,38 @@
+body {
+    font-family: "Inter-Bold", Helvetica;
+    background-color: #111b36;
+    color: #aaaaaa;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+
+img {
+    border-radius: 10px;
+    margin: 30px 0 10px 0;
+}
+
+#copyright {
+    text-align: center;
+    color: initial;
+}
+
+h1,
+h2,
+.job-title,
+.course-title,
+.project-title {
+    color: #E2E8F0;
+}
