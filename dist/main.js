@@ -87,7 +87,7 @@ function addSocialMediaLinks(socialMedias) {
 function addAboutMe(aboutMe) {
     const aboutMeSection = document.getElementById('about-me');
     if (aboutMeSection) {
-        aboutMeSection.innerHTML = `<p>${aboutMe.summary}</p>`;
+        aboutMeSection.innerHTML = `<p>${aboutMe.summary.english}</p>`;
     }
 }
 function addWorkExperience(workExperience) {

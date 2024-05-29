@@ -18,7 +18,11 @@ interface SocialMedias {
 }
 
 interface AboutMe {
-  summary: string;
+  summary: {
+      french: string;
+      portuguese: string;
+      english: string;
+  };
 }
 
 interface WorkExperience {
@@ -168,7 +172,7 @@ function addAboutMe(aboutMe: AboutMe) {
   const aboutMeSection = document.getElementById('about-me');
 
   if (aboutMeSection) {
-    aboutMeSection.innerHTML = `<p>${aboutMe.summary}</p>`;
+    aboutMeSection.innerHTML = `<p>${aboutMe.summary.english}</p>`;
   }
 }
 
