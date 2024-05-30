@@ -24,4 +24,11 @@
     overflow-y: initial;
     margin: 0;
   }
+
+  button {
+    height: 3rem;
+    width: 5rem;
+    margin: 5px;
+    font-size: x-large;
+  }
 }
