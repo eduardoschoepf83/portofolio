@@ -164,6 +164,8 @@ function setupLanguageButtons() {
         });
     });
 }
-const userLanguage = navigator.language || 'fr';
-setupLanguageButtons();
-loadAndProcessJSON(userLanguage);
+document.addEventListener('DOMContentLoaded', () => {
+    const userLanguage = 'fr';
+    setupLanguageButtons();
+    loadAndProcessJSON(userLanguage);
+});
