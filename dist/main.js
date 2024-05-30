@@ -64,19 +64,38 @@ function addPersonalInformation(personalInformation, language) {
         console.error('An error occurred while adding personal information:', error);
     }
 }
+/**
+ * Adds skills to the designated HTML element.
+ *
+ * @param skills An array containing the skills to be added.
+ */
 function addSkills(skills) {
-    const divExperienciaProfissional = document.getElementById("personalInformation");
-    if (divExperienciaProfissional) {
-        let skillConcat = '';
-        skills.forEach((skill) => {
-            skillConcat += ' ' + skill + ' |';
-        });
-        if (skillConcat.length > 0) {
-            skillConcat = skillConcat.slice(0, -1);
+    try {
+        // Get the HTML element with the ID 'personalInformation'
+        const divExperienciaProfissional = document.getElementById("personalInformation");
+        // Check if the HTML element exists
+        if (divExperienciaProfissional) {
+            let skillConcat = '';
+            // Concatenate skills into a single string with '|' separator
+            skills.forEach((skill) => {
+                skillConcat += ' ' + skill + ' |';
+            });
+            // Remove the last '|' character
+            if (skillConcat.length > 0) {
+                skillConcat = skillConcat.slice(0, -1);
+            }
+            // Create a new <p> element to display the skills
+            let skillHTML = document.createElement('p');
+            skillHTML.textContent = skillConcat;
+            // Append the <p> element to the 'personalInformation' element
+            divExperienciaProfissional.appendChild(skillHTML);
         }
-        let skillHTML = document.createElement('p');
-        skillHTML.textContent = skillConcat;
-        divExperienciaProfissional.appendChild(skillHTML);
+        else {
+            console.warn("The element with ID 'personalInformation' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding skills:', error);
     }
 }
 function addMediasForDownload(mediaLinks) {

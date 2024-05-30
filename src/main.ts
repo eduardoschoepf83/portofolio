@@ -177,24 +177,41 @@ function addPersonalInformation(personalInformation: PersonalInformation, langua
   }
 }
 
+/**
+ * Adds skills to the designated HTML element.
+ * 
+ * @param skills An array containing the skills to be added.
+ */
 function addSkills(skills: string[]) {
-  const divExperienciaProfissional = document.getElementById("personalInformation");
+  try {
+    // Get the HTML element with the ID 'personalInformation'
+    const divExperienciaProfissional = document.getElementById("personalInformation");
 
-  if (divExperienciaProfissional) {
-    let skillConcat = '';
+    // Check if the HTML element exists
+    if (divExperienciaProfissional) {
+      let skillConcat = '';
 
-    skills.forEach((skill) => {
-      skillConcat += ' ' + skill + ' |';
-    })
+      // Concatenate skills into a single string with '|' separator
+      skills.forEach((skill) => {
+        skillConcat += ' ' + skill + ' |';
+      });
 
-    if (skillConcat.length > 0) {
-      skillConcat = skillConcat.slice(0, -1);
+      // Remove the last '|' character
+      if (skillConcat.length > 0) {
+        skillConcat = skillConcat.slice(0, -1);
+      }
+
+      // Create a new <p> element to display the skills
+      let skillHTML = document.createElement('p');
+      skillHTML.textContent = skillConcat;
+
+      // Append the <p> element to the 'personalInformation' element
+      divExperienciaProfissional.appendChild(skillHTML);
+    } else {
+      console.warn("The element with ID 'personalInformation' was not found.");
     }
-
-    let skillHTML = document.createElement('p');
-    skillHTML.textContent = skillConcat;
-
-    divExperienciaProfissional.appendChild(skillHTML);
+  } catch (error) {
+    console.error('An error occurred while adding skills:', error);
   }
 }
 
