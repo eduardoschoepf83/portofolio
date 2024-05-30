@@ -98,21 +98,42 @@ function addSkills(skills) {
         console.error('An error occurred while adding skills:', error);
     }
 }
+/**
+ * Adds media links for download to the designated HTML element.
+ *
+ * @param mediaLinks An array of media link objects to be added.
+ */
 function addMediasForDownload(mediaLinks) {
-    const divInformacoesPessoais = document.getElementById('personalInformation');
-    if (divInformacoesPessoais) {
-        let mediaLinksHTML = document.createElement("p");
-        mediaLinksHTML.textContent = "CV download : ";
-        mediaLinks.forEach(ml => {
-            let buttonElement = document.createElement('button');
-            buttonElement.textContent = ml.name;
-            let anchorElement = document.createElement('a');
-            anchorElement.href = window.location.pathname + ml.address;
-            anchorElement.target = '_blank';
-            anchorElement.appendChild(buttonElement);
-            mediaLinksHTML.appendChild(anchorElement);
-        });
-        divInformacoesPessoais.appendChild(mediaLinksHTML);
+    try {
+        // Get the HTML element with the ID 'personalInformation'
+        const divInformacoesPessoais = document.getElementById('personalInformation');
+        // Check if the HTML element exists
+        if (divInformacoesPessoais) {
+            // Create a new <p> element to contain the media links
+            let mediaLinksHTML = document.createElement("p");
+            mediaLinksHTML.textContent = "CV download: ";
+            // Iterate through each media link object in the array
+            mediaLinks.forEach(ml => {
+                // Create a button element for the media link
+                let buttonElement = document.createElement('button');
+                buttonElement.textContent = ml.name;
+                // Create an anchor element to wrap the button element
+                let anchorElement = document.createElement('a');
+                anchorElement.href = window.location.pathname + ml.address;
+                anchorElement.target = '_blank';
+                anchorElement.appendChild(buttonElement);
+                // Append the anchor element to the <p> element
+                mediaLinksHTML.appendChild(anchorElement);
+            });
+            // Append the <p> element to the 'personalInformation' element
+            divInformacoesPessoais.appendChild(mediaLinksHTML);
+        }
+        else {
+            console.warn("The element with ID 'personalInformation' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding media links for download:', error);
     }
 }
 function addSocialMediaLinks(socialMedias) {
