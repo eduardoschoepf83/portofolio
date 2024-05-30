@@ -105,14 +105,14 @@
         {
             "degree": {
                 "en": "Bachelor's degree in Software Engineering",
-                "fr": "Licence en ingénierie logicielle",
+                "fr": "Bachelor en génie logiciel (BAC +4)",
                 "pt": "Bacharelado em Engenharia de Software"
             },
             "institution": "UNINTER",
             "type": {
                 "en": "Distance learning Bachelors",
-                "fr": "Licence à distance",
-                "pt": "Bacharelado a distância"
+                "fr": "EAD",
+                "pt": "EAD"
             },
             "location": "Santa Cruz do Sul - BR",
             "period": {
