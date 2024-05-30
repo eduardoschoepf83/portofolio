@@ -38,13 +38,30 @@ function loadAndProcessJSON(selectedLanguage) {
         }
     });
 }
+/**
+ * Adds personal information to the designated HTML element based on the selected language.
+ *
+ * @param personalInformation An object containing the personal information data.
+ * @param language The selected language for displaying the personal information.
+ */
 function addPersonalInformation(personalInformation, language) {
-    const divInformacoesPessoais = document.getElementById('personalInformation');
-    if (divInformacoesPessoais) {
-        divInformacoesPessoais.innerHTML = `
-      <h1 class='name'>${personalInformation.name}</h1>
-      <h2 class='my-job-title'>${personalInformation.desiredPosition[language]}</h2>
-    `;
+    try {
+        // Get the HTML element with the ID 'personalInformation'
+        const divInformacoesPessoais = document.getElementById('personalInformation');
+        // Check if the HTML element exists
+        if (divInformacoesPessoais) {
+            // Set the inner HTML of the element with the name and job title based on the selected language
+            divInformacoesPessoais.innerHTML = `
+        <h1 class='name'>${personalInformation.name}</h1>
+        <h2 class='my-job-title'>${personalInformation.desiredPosition[language]}</h2>
+      `;
+        }
+        else {
+            console.warn("The element with ID 'personalInformation' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding personal information:', error);
     }
 }
 function addSkills(skills) {
