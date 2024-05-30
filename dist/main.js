@@ -17,14 +17,20 @@ function loadAndProcessJSON(selectedLanguage) {
         try {
             const response = yield fetch("./profile.json");
             const profileData = yield response.json();
-            selectedLanguage = selectedLanguage == undefined ? 'fr' : selectedLanguage;
-            addPersonalInformation(profileData.personalInformation, selectedLanguage);
+            let defaultLanguage;
+            if (selectedLanguage === "en" || selectedLanguage === "fr" || selectedLanguage === "pt") {
+                defaultLanguage = selectedLanguage;
+            }
+            else {
+                defaultLanguage = "fr";
+            }
+            addPersonalInformation(profileData.personalInformation, defaultLanguage);
             addSkills(profileData.skills);
             addSocialMediaLinks(profileData.socialMedias);
-            addAboutMe(profileData.aboutMe, selectedLanguage);
-            addWorkExperience(profileData.workExperience, selectedLanguage);
-            addEducation(profileData.education, selectedLanguage);
-            addProjects(profileData.projects, selectedLanguage);
+            addAboutMe(profileData.aboutMe, defaultLanguage);
+            addWorkExperience(profileData.workExperience, defaultLanguage);
+            addEducation(profileData.education, defaultLanguage);
+            addProjects(profileData.projects, defaultLanguage);
             addCopyright();
         }
         catch (error) {
