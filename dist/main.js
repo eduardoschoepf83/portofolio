@@ -302,26 +302,69 @@ function addProjects(projects, language) {
         console.error('An error occurred while adding projects:', error);
     }
 }
+/**
+ * Updates the copyright section with the current year.
+ */
 function addCopyright() {
-    const currentYear = new Date().getFullYear();
-    const copyright = document.getElementById('copyright');
-    if (copyright) {
-        copyright.innerHTML = `© ${currentYear} Eduardo Schoepf`;
+    try {
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        // Get the HTML element with the ID 'copyright'
+        const copyright = document.getElementById('copyright');
+        // Check if the HTML element exists
+        if (copyright) {
+            // Set the inner HTML to display the current year and the author's name
+            copyright.innerHTML = `© ${currentYear} Eduardo Schoepf`;
+        }
+        else {
+            console.warn("The element with ID 'copyright' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding copyright:', error);
     }
 }
+/**
+ * Sets up language buttons to load and process JSON data based on the selected language.
+ */
 function setupLanguageButtons() {
-    const buttons = document.querySelectorAll('.language-options button');
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedLanguage = button.innerText.toUpperCase() === 'EN' ? 'en' :
-                button.innerText.toUpperCase() === 'FR' ? 'fr' :
-                    'pt';
-            loadAndProcessJSON(selectedLanguage);
+    try {
+        // Select all language option buttons
+        const buttons = document.querySelectorAll('.language-options button');
+        // Add a click event listener to each button
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Determine the selected language based on the button text
+                const selectedLanguage = button.innerText.toUpperCase() === 'EN' ? 'en' :
+                    button.innerText.toUpperCase() === 'FR' ? 'fr' :
+                        'pt';
+                // Load and process JSON data for the selected language
+                loadAndProcessJSON(selectedLanguage);
+            });
         });
-    });
+    }
+    catch (error) {
+        console.error('An error occurred while setting up language buttons:', error);
+    }
 }
+/**
+ * Initializes the webpage by setting up language buttons and loading JSON data
+ * based on the user's browser language.
+ */
 document.addEventListener('DOMContentLoaded', () => {
-    const userLanguage = navigator.language || 'fr';
-    setupLanguageButtons();
-    loadAndProcessJSON(userLanguage);
+    try {
+        // Get the user's browser language or default to 'fr'
+        let userLanguage = navigator.language || 'fr';
+        // Ensure the user language is one of the supported languages ('en', 'fr', 'pt')
+        if (userLanguage !== "en" && userLanguage !== "fr" && userLanguage !== "pt") {
+            userLanguage = "fr";
+        }
+        // Set up language buttons
+        setupLanguageButtons();
+        // Load and process JSON data for the detected or default language
+        loadAndProcessJSON(userLanguage);
+    }
+    catch (error) {
+        console.error('An error occurred during initialization:', error);
+    }
 });
