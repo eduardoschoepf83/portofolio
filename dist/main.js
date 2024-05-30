@@ -164,9 +164,6 @@ function setupLanguageButtons() {
         });
     });
 }
-document.addEventListener('DOMContentLoaded', () => {
-    // const userLanguage  = navigator.language || 'en'; ToDo : Does not work on smartphone browsers
-    const userLanguage = navigator.language || 'fr';
-    setupLanguageButtons();
-    loadAndProcessJSON(userLanguage);
-});
+const userLanguage = navigator.language || 'fr';
+setupLanguageButtons();
+loadAndProcessJSON(userLanguage);
