@@ -130,6 +130,8 @@ async function loadAndProcessJSON(selectedLanguage: string) {
     const response = await fetch("./profile.json");
     const profileData: Profile = await response.json();
 
+    selectedLanguage = selectedLanguage == undefined ? 'fr' : selectedLanguage
+
     addPersonalInformation(profileData.personalInformation, selectedLanguage);
     addSkills(profileData.skills);
     addSocialMediaLinks(profileData.socialMedias);
@@ -314,7 +316,7 @@ function setupLanguageButtons() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const userLanguage  = 'fr';
+  const userLanguage  = navigator.language || 'fr';
   setupLanguageButtons();
   loadAndProcessJSON(userLanguage);
 });

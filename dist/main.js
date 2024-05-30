@@ -17,6 +17,7 @@ function loadAndProcessJSON(selectedLanguage) {
         try {
             const response = yield fetch("./profile.json");
             const profileData = yield response.json();
+            selectedLanguage = selectedLanguage == undefined ? 'fr' : selectedLanguage;
             addPersonalInformation(profileData.personalInformation, selectedLanguage);
             addSkills(profileData.skills);
             addSocialMediaLinks(profileData.socialMedias);
@@ -165,7 +166,7 @@ function setupLanguageButtons() {
     });
 }
 document.addEventListener('DOMContentLoaded', () => {
-    const userLanguage = 'fr';
+    const userLanguage = navigator.language || 'fr';
     setupLanguageButtons();
     loadAndProcessJSON(userLanguage);
 });
