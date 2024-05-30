@@ -170,63 +170,136 @@ function addSocialMediaLinks(socialMedias) {
         console.error('An error occurred while adding social media links:', error);
     }
 }
+/**
+ * Adds the "About Me" section to the HTML document.
+ *
+ * @param aboutMe An object containing summaries in different languages.
+ * @param language The selected language for displaying the summary.
+ */
 function addAboutMe(aboutMe, language) {
-    const aboutMeSection = document.getElementById('about-me');
-    if (aboutMeSection) {
-        aboutMeSection.innerHTML = `<p>${aboutMe.summary[language]}</p>`;
+    try {
+        // Get the HTML element with the ID 'about-me'
+        const aboutMeSection = document.getElementById('about-me');
+        // Check if the HTML element exists
+        if (aboutMeSection) {
+            // Set the inner HTML of the 'about-me' element with the summary in the selected language
+            aboutMeSection.innerHTML = `<p>${aboutMe.summary[language]}</p>`;
+        }
+        else {
+            console.warn("The element with ID 'about-me' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding the About Me section:', error);
     }
 }
+/**
+ * Adds the work experience section to the HTML document.
+ *
+ * @param workExperience An array of work experience objects.
+ * @param language The selected language for displaying work experience details.
+ */
 function addWorkExperience(workExperience, language) {
-    const sectionWorkExperience = document.getElementById('professional-activities');
-    if (sectionWorkExperience) {
-        let workExperienceHTML = '<h2>Work Experience</h2>';
-        workExperience.forEach((work) => {
-            //let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
-            workExperienceHTML += `
-        <div class='resume-entry'>
-          <div class='date-range'>${work.period[language]}</div>
-          <div class='job-title'>${work.position[language]}</div>
-          <div class='company-name'>${work.company}, ${work.location}</div>
-          <p class='job-description'>${work.description[language]}</p>
-        </div>
-      `;
-        });
-        sectionWorkExperience.innerHTML = workExperienceHTML;
+    try {
+        // Get the HTML element with the ID 'professional-activities'
+        const sectionWorkExperience = document.getElementById('professional-activities');
+        // Check if the HTML element exists
+        if (sectionWorkExperience) {
+            let workExperienceHTML = '<h2>Work Experience</h2>';
+            // Iterate through each work experience object in the array
+            workExperience.forEach((work) => {
+                // Generate the HTML string for each work experience entry
+                workExperienceHTML += `
+          <div class='resume-entry'>
+            <div class='date-range'>${work.period[language]}</div>
+            <div class='job-title'>${work.position[language]}</div>
+            <div class='company-name'>${work.company}, ${work.location}</div>
+            <p class='job-description'>${work.description[language]}</p>
+          </div>
+        `;
+            });
+            // Set the inner HTML of the 'professional-activities' element
+            sectionWorkExperience.innerHTML = workExperienceHTML;
+        }
+        else {
+            console.warn("The element with ID 'professional-activities' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding work experience:', error);
     }
 }
+/**
+ * Adds the education section to the HTML document.
+ *
+ * @param education An array of education objects.
+ * @param language The selected language for displaying education details.
+ */
 function addEducation(education, language) {
-    const sectionEducation = document.getElementById('education');
-    if (sectionEducation) {
-        let educationHTML = '<h2>Education</h2>';
-        education.forEach((elem) => {
-            educationHTML += `
+    try {
+        // Get the HTML element with the ID 'education'
+        const sectionEducation = document.getElementById('education');
+        // Check if the HTML element exists
+        if (sectionEducation) {
+            let educationHTML = '<h2>Education</h2>';
+            // Iterate through each education object in the array
+            education.forEach((elem) => {
+                // Generate the HTML string for each education entry
+                educationHTML += `
         <div class='resume-entry'>
           <div class='date-range'>${elem.period[language]}</div>
           <div class='course-title'>${elem.degree[language]}</div>
           <div class='educational-institution'>${elem.institution}</div>
           <p class='course-description'>${elem.description[language]}</p>
         </div>
-      `;
-        });
-        sectionEducation.innerHTML = educationHTML;
+          `;
+            });
+            // Set the inner HTML of the 'education' element
+            sectionEducation.innerHTML = educationHTML;
+        }
+        else {
+            console.warn("The element with ID 'education' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding education:', error);
     }
 }
+/**
+ * Adds the projects section to the HTML document.
+ *
+ * @param projects An array of project objects.
+ * @param language The selected language for displaying project details.
+ */
 function addProjects(projects, language) {
-    const sectionProjects = document.getElementById('projects');
-    if (sectionProjects) {
-        let projectsHTML = '<h2>Projects</h2>';
-        projects.forEach((elem) => {
-            projectsHTML += `
-        <div class='resume-entry'>
-          <a href=${elem.url} target='_blank'>
-            <img src='img/${elem.img}' alt='Project Image'>
-          </a>
-          <div class='project-title'>${elem.title[language]}</div>
-          <p class='project-description'>${elem.description[language]}</p>
-        </div>
-      `;
-        });
-        sectionProjects.innerHTML = projectsHTML;
+    try {
+        // Get the HTML element with the ID 'projects'
+        const sectionProjects = document.getElementById('projects');
+        // Check if the HTML element exists
+        if (sectionProjects) {
+            let projectsHTML = '<h2>Projects</h2>';
+            // Iterate through each project object in the array
+            projects.forEach((elem) => {
+                // Generate the HTML string for each project entry
+                projectsHTML += `
+          <div class='resume-entry'>
+            <a href=${elem.url} target='_blank'>
+              <img src='img/${elem.img}' alt='Project Image'>
+            </a>
+            <div class='project-title'>${elem.title[language]}</div>
+            <p class='project-description'>${elem.description[language]}</p>
+          </div>
+        `;
+            });
+            // Set the inner HTML of the 'projects' element
+            sectionProjects.innerHTML = projectsHTML;
+        }
+        else {
+            console.warn("The element with ID 'projects' was not found.");
+        }
+    }
+    catch (error) {
+        console.error('An error occurred while adding projects:', error);
     }
 }
 function addCopyright() {
