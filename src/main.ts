@@ -257,23 +257,40 @@ function addMediasForDownload(mediaLinks: MediaLink[]) {
   }
 }
 
+/**
+ * Adds social media links to the designated HTML element.
+ * 
+ * @param socialMedias An array of social media objects to be added.
+ */
 function addSocialMediaLinks(socialMedias: SocialMedia[]) {
-  const socialMediasHTML = document.getElementById('social-medias');
+  try {
+    // Get the HTML element with the ID 'social-medias'
+    const socialMediasHTML = document.getElementById('social-medias');
 
-  if (socialMediasHTML) {
-    let socialMediasConcat = '';
+    // Check if the HTML element exists
+    if (socialMediasHTML) {
+      let socialMediasConcat = '';
 
-    socialMedias.forEach(sm => {
-      const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
+      // Iterate through each social media object in the array
+      socialMedias.forEach(sm => {
+        // Determine the icon class based on the social media name
+        const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
 
-      socialMediasConcat += `
-        <a href='${sm.link}' target='_blank'>
-          <i class='fa-brands ${iconName} fa-2xl'></i>
-        </a>
-      `;
-    });
+        // Concatenate HTML string for each social media link
+        socialMediasConcat += `
+          <a href='${sm.link}' target='_blank'>
+            <i class='fa-brands ${iconName} fa-2xl'></i>
+          </a>
+        `;
+      });
 
-    socialMediasHTML.innerHTML = socialMediasConcat;
+      // Set the inner HTML of the 'social-medias' element
+      socialMediasHTML.innerHTML = socialMediasConcat;
+    } else {
+      console.warn("The element with ID 'social-medias' was not found.");
+    }
+  } catch (error) {
+    console.error('An error occurred while adding social media links:', error);
   }
 }
 
