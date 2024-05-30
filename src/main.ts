@@ -4,54 +4,102 @@ interface PersonalInformation {
   city: string;
   phone: string;
   email: string;
-  desiredPosition: string;
+  desiredPosition: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
 }
 
-interface MediaLinks {
+interface MediaLink {
   name: string;
   address: string;
 }
 
-interface SocialMedias {
+interface SocialMedia {
   name: string;
   link: string;
 }
 
 interface AboutMe {
   summary: {
-      french: string;
-      portuguese: string;
-      english: string;
+    en: string;
+    fr: string;
+    pt: string;
   };
 }
 
 interface WorkExperience {
-  position: string;
+  position: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
   company: string;
   location: string;
-  period: string;
-  description: string;
+  period: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
+  description: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
 }
 
 interface Education {
-  degree: string;
+  degree: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
   institution: string;
-  type: string;
+  type: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
   location: string;
-  period: string;
-  description: string;
+  period: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
+  description: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
 }
 
-interface Projects {
-  title: string;
-  description: string;
+interface Project {
+  title: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
+  description: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
   img: string;
   url: string;
 }
 
 interface Language {
-  language: string;
-  level: string;
+  language: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
+  level: {
+    en: string;
+    fr: string;
+    pt: string;
+  };
 }
 
 interface Certification {
@@ -63,29 +111,32 @@ interface Certification {
 interface Profile {
   personalInformation: PersonalInformation;
   skills: string[];
-  mediaLinks: MediaLinks[];
-  socialMedias: SocialMedias[];
+  mediaLinks: MediaLink[];
+  socialMedias: SocialMedia[];
   aboutMe: AboutMe;
   workExperience: WorkExperience[];
   education: Education[];
-  projects: Projects[];
+  projects: Project[];
   languages: Language[];
   certifications: Certification[];
 }
 
-async function loadAndProcessJSON() {
+/**
+ * Loads and processes the JSON profile data based on the selected language.
+ * @param selectedLanguage The language selected by the user for displaying profile information.
+ */
+async function loadAndProcessJSON(selectedLanguage: string) {
   try {
     const response = await fetch("./profile.json");
     const profileData: Profile = await response.json();
 
-    addPersonalInformation(profileData.personalInformation);
+    addPersonalInformation(profileData.personalInformation, selectedLanguage);
     addSkills(profileData.skills);
-    /*addMediasForDownload(profileData.mediaLinks);*/
     addSocialMediaLinks(profileData.socialMedias);
-    addAboutMe(profileData.aboutMe);
-    addWorkExperience(profileData.workExperience);
-    addEducation(profileData.education);
-    addProjects(profileData.projects);
+    addAboutMe(profileData.aboutMe, selectedLanguage);
+    addWorkExperience(profileData.workExperience, selectedLanguage);
+    addEducation(profileData.education, selectedLanguage);
+    addProjects(profileData.projects, selectedLanguage);
     addCopyright();
 
   } catch (error) {
@@ -93,13 +144,13 @@ async function loadAndProcessJSON() {
   }
 }
 
-function addPersonalInformation(personalInformation: PersonalInformation) {
+function addPersonalInformation(personalInformation: PersonalInformation, language: string) {
   const divInformacoesPessoais = document.getElementById('personalInformation');
 
   if (divInformacoesPessoais) {
     divInformacoesPessoais.innerHTML = `
       <h1 class='name'>${personalInformation.name}</h1>
-      <h2 class='my-job-title'>${personalInformation.desiredPosition}</h2>
+      <h2 class='my-job-title'>${personalInformation.desiredPosition[language as keyof typeof personalInformation.desiredPosition]}</h2>
     `;
   }
 }
@@ -125,14 +176,14 @@ function addSkills(skills: string[]) {
   }
 }
 
-function addMediasForDownload(mediaLinks: MediaLinks[] ) {
+function addMediasForDownload(mediaLinks: MediaLink[]) {
   const divInformacoesPessoais = document.getElementById('personalInformation');
 
   if (divInformacoesPessoais) {
     let mediaLinksHTML = document.createElement("p");
     mediaLinksHTML.textContent = "CV download : ";
 
-    mediaLinks.forEach( ml => {
+    mediaLinks.forEach(ml => {
       let buttonElement = document.createElement('button');
       buttonElement.textContent = ml.name;
 
@@ -148,7 +199,7 @@ function addMediasForDownload(mediaLinks: MediaLinks[] ) {
 
 }
 
-function addSocialMediaLinks(socialMedias: SocialMedias[]) {
+function addSocialMediaLinks(socialMedias: SocialMedia[]) {
   const socialMediasHTML = document.getElementById('social-medias');
 
   if (socialMediasHTML) {
@@ -168,29 +219,29 @@ function addSocialMediaLinks(socialMedias: SocialMedias[]) {
   }
 }
 
-function addAboutMe(aboutMe: AboutMe) {
+function addAboutMe(aboutMe: AboutMe, language: string) {
   const aboutMeSection = document.getElementById('about-me');
 
   if (aboutMeSection) {
-    aboutMeSection.innerHTML = `<p>${aboutMe.summary.english}</p>`;
+    aboutMeSection.innerHTML = `<p>${aboutMe.summary[language as keyof typeof aboutMe.summary]}</p>`;
   }
 }
 
-function addWorkExperience(workExperience: WorkExperience[]) {
+function addWorkExperience(workExperience: WorkExperience[], language: string) {
   const sectionWorkExperience = document.getElementById('professional-activities');
 
   if (sectionWorkExperience) {
     let workExperienceHTML = '<h2>Work Experience</h2>';
 
     workExperience.forEach((work) => {
-      let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
+      //let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
 
       workExperienceHTML += `
         <div class='resume-entry'>
-          <div class='date-range'>${work.period}</div>
-          <div class='job-title'>${work.position}</div>
+          <div class='date-range'>${work.period[language as keyof typeof work.period]}</div>
+          <div class='job-title'>${work.position[language as keyof typeof work.position]}</div>
           <div class='company-name'>${work.company}, ${work.location}</div>
-          <p class='job-description'>${description}</p>
+          <p class='job-description'>${work.description[language as keyof typeof work.description]}</p>
         </div>
       `;
     });
@@ -199,41 +250,41 @@ function addWorkExperience(workExperience: WorkExperience[]) {
   }
 }
 
-function addEducation(education: Education[]) {
+function addEducation(education: Education[], language: string) {
   const sectionEducation = document.getElementById('education');
 
   if (sectionEducation) {
     let educationHTML = '<h2>Education</h2>';
-    
+
     education.forEach((elem) => {
       educationHTML += `
         <div class='resume-entry'>
-          <div class='date-range'>${elem.period}</div>
-          <div class='course-title'>${elem.degree}</div>
+          <div class='date-range'>${elem.period[language as keyof typeof elem.period]}</div>
+          <div class='course-title'>${elem.degree[language as keyof typeof elem.degree]}</div>
           <div class='educational-institution'>${elem.institution}</div>
-          <p class='course-description'>${elem.description}</p>
+          <p class='course-description'>${elem.description[language as keyof typeof elem.description]}</p>
         </div>
       `;
     })
-  
+
     sectionEducation.innerHTML = educationHTML;
   }
 }
 
-function addProjects(projects: Projects[]) {
+function addProjects(projects: Project[], language: string) {
   const sectionProjects = document.getElementById('projects');
 
   if (sectionProjects) {
     let projectsHTML = '<h2>Projects</h2>';
-    
+
     projects.forEach((elem) => {
       projectsHTML += `
         <div class='resume-entry'>
           <a href=${elem.url} target='_blank'>
             <img src='img/${elem.img}' alt='Project Image'>
           </a>
-          <div class='project-title'>${elem.title}</div>
-          <p class='project-description'>${elem.description}</p>
+          <div class='project-title'>${elem.title[language as keyof typeof elem.title]}</div>
+          <p class='project-description'>${elem.description[language as keyof typeof elem.description]}</p>
         </div>
       `;
     })
@@ -245,9 +296,25 @@ function addProjects(projects: Projects[]) {
 function addCopyright() {
   const currentYear = new Date().getFullYear();
   const copyright = document.getElementById('copyright');
-  if(copyright) {
+  if (copyright) {
     copyright.innerHTML = `© ${currentYear} Eduardo Schoepf`;
-  }  
+  }
 }
 
-loadAndProcessJSON();
+function setupLanguageButtons() {
+  const buttons = document.querySelectorAll('.language-options button');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selectedLanguage =  (button as HTMLElement).innerText.toUpperCase() === 'EN' ? 'en' :
+                                (button as HTMLElement).innerText.toUpperCase() === 'FR' ? 'fr' :
+                                'pt';
+      loadAndProcessJSON(selectedLanguage);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const userLanguage  = navigator.language || 'en';
+  setupLanguageButtons();
+  loadAndProcessJSON(userLanguage );
+});

@@ -8,19 +8,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function loadAndProcessJSON() {
+/**
+ * Loads and processes the JSON profile data based on the selected language.
+ * @param selectedLanguage The language selected by the user for displaying profile information.
+ */
+function loadAndProcessJSON(selectedLanguage) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield fetch("./profile.json");
             const profileData = yield response.json();
-            addPersonalInformation(profileData.personalInformation);
+            addPersonalInformation(profileData.personalInformation, selectedLanguage);
             addSkills(profileData.skills);
-            /*addMediasForDownload(profileData.mediaLinks);*/
             addSocialMediaLinks(profileData.socialMedias);
-            addAboutMe(profileData.aboutMe);
-            addWorkExperience(profileData.workExperience);
-            addEducation(profileData.education);
-            addProjects(profileData.projects);
+            addAboutMe(profileData.aboutMe, selectedLanguage);
+            addWorkExperience(profileData.workExperience, selectedLanguage);
+            addEducation(profileData.education, selectedLanguage);
+            addProjects(profileData.projects, selectedLanguage);
             addCopyright();
         }
         catch (error) {
@@ -28,12 +31,12 @@ function loadAndProcessJSON() {
         }
     });
 }
-function addPersonalInformation(personalInformation) {
+function addPersonalInformation(personalInformation, language) {
     const divInformacoesPessoais = document.getElementById('personalInformation');
     if (divInformacoesPessoais) {
         divInformacoesPessoais.innerHTML = `
       <h1 class='name'>${personalInformation.name}</h1>
-      <h2 class='my-job-title'>${personalInformation.desiredPosition}</h2>
+      <h2 class='my-job-title'>${personalInformation.desiredPosition[language]}</h2>
     `;
     }
 }
@@ -84,48 +87,48 @@ function addSocialMediaLinks(socialMedias) {
         socialMediasHTML.innerHTML = socialMediasConcat;
     }
 }
-function addAboutMe(aboutMe) {
+function addAboutMe(aboutMe, language) {
     const aboutMeSection = document.getElementById('about-me');
     if (aboutMeSection) {
-        aboutMeSection.innerHTML = `<p>${aboutMe.summary.english}</p>`;
+        aboutMeSection.innerHTML = `<p>${aboutMe.summary[language]}</p>`;
     }
 }
-function addWorkExperience(workExperience) {
+function addWorkExperience(workExperience, language) {
     const sectionWorkExperience = document.getElementById('professional-activities');
     if (sectionWorkExperience) {
         let workExperienceHTML = '<h2>Work Experience</h2>';
         workExperience.forEach((work) => {
-            let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
+            //let description = work.description.replace(/[:;]/g, match => `${match}<br>`);
             workExperienceHTML += `
         <div class='resume-entry'>
-          <div class='date-range'>${work.period}</div>
-          <div class='job-title'>${work.position}</div>
+          <div class='date-range'>${work.period[language]}</div>
+          <div class='job-title'>${work.position[language]}</div>
           <div class='company-name'>${work.company}, ${work.location}</div>
-          <p class='job-description'>${description}</p>
+          <p class='job-description'>${work.description[language]}</p>
         </div>
       `;
         });
         sectionWorkExperience.innerHTML = workExperienceHTML;
     }
 }
-function addEducation(education) {
+function addEducation(education, language) {
     const sectionEducation = document.getElementById('education');
     if (sectionEducation) {
         let educationHTML = '<h2>Education</h2>';
         education.forEach((elem) => {
             educationHTML += `
         <div class='resume-entry'>
-          <div class='date-range'>${elem.period}</div>
-          <div class='course-title'>${elem.degree}</div>
+          <div class='date-range'>${elem.period[language]}</div>
+          <div class='course-title'>${elem.degree[language]}</div>
           <div class='educational-institution'>${elem.institution}</div>
-          <p class='course-description'>${elem.description}</p>
+          <p class='course-description'>${elem.description[language]}</p>
         </div>
       `;
         });
         sectionEducation.innerHTML = educationHTML;
     }
 }
-function addProjects(projects) {
+function addProjects(projects, language) {
     const sectionProjects = document.getElementById('projects');
     if (sectionProjects) {
         let projectsHTML = '<h2>Projects</h2>';
@@ -135,8 +138,8 @@ function addProjects(projects) {
           <a href=${elem.url} target='_blank'>
             <img src='img/${elem.img}' alt='Project Image'>
           </a>
-          <div class='project-title'>${elem.title}</div>
-          <p class='project-description'>${elem.description}</p>
+          <div class='project-title'>${elem.title[language]}</div>
+          <p class='project-description'>${elem.description[language]}</p>
         </div>
       `;
         });
@@ -150,4 +153,19 @@ function addCopyright() {
         copyright.innerHTML = `© ${currentYear} Eduardo Schoepf`;
     }
 }
-loadAndProcessJSON();
+function setupLanguageButtons() {
+    const buttons = document.querySelectorAll('.language-options button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedLanguage = button.innerText.toUpperCase() === 'EN' ? 'en' :
+                button.innerText.toUpperCase() === 'FR' ? 'fr' :
+                    'pt';
+            loadAndProcessJSON(selectedLanguage);
+        });
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const userLanguage = navigator.language || 'en';
+    setupLanguageButtons();
+    loadAndProcessJSON(userLanguage);
+});

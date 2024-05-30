@@ -5,13 +5,17 @@
         "city": "Paris",
         "phone": "+33652543966",
         "email": "eduardo.schoepf@hotmail.com",
-        "desiredPosition": "Software Developer"
+        "desiredPosition": {
+            "en": "Software Developer",
+            "fr": "Développeur Logiciel",
+            "pt": "Desenvolvedor de software"
+        }
     },
     "aboutMe": {
         "summary": {
-            "frensh": "",
-            "portuguese": "",
-            "english": "Hi there 👋, I'm Eduardo Schoepf, and my journey into the world of software development began in 2016, when I obtained my professional title of software developer🎓. These studies allowed me to develop my skills in XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, UML, MySQL and object-oriented programming. It was also an opportunity to put my theoretical learning into practice during a three-month internship, during which I had the chance to develop a web application in PHP5, model a MySQL database and set up unit tests. In 2017, I started my programming career at a startup in Montpellier, in the south of France, where I took part in a project to develop a multiplatform application with Ionic, Cordova and AngularJS📱. A year later, I made the transition to the public sector. My current role involves analyzing XML flows and resolving incident tickets, as well as contributing to the integration of new colleagues. Passionate about the field of software development, I'm currently studying software engineering and am looking for a challenge in a software development team."
+            "en": "Hi there 👋, I'm Eduardo Schoepf, and my journey into the world of software development began in 2016, when I obtained my professional title of software developer🎓. These studies allowed me to develop my skills in XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, UML, MySQL and object-oriented programming. It was also an opportunity to put my theoretical learning into practice during a three-month internship, during which I had the chance to develop a web application in PHP5, model a MySQL database and set up unit tests. In 2017, I started my programming career at a startup in Montpellier, in the south of France, where I took part in a project to develop a multiplatform application with Ionic, Cordova and AngularJS📱. A year later, I made the transition to the public sector. My current role involves analyzing XML flows and resolving incident tickets, as well as contributing to the integration of new colleagues. Passionate about the field of software development, I'm currently studying software engineering and am looking for a challenge in a software development team.",
+            "fr": "Développeur JavaScript confirmé, j'ai contribué à la conception et à la mise en place de fonctionnalités d’une application mobile multiplateforme en AngularJS. Je poursuis actuellement des études en Ingénierie logicielle et j'ai un intérêt particulier pour le langage Java et, plus précisément, pour le Framework Spring. Je suis à la recherche d'un challenge en tant que Développeur Java.",
+            "pt": "Sou programador Javascript com experiência em desenvolvimento de aplicativos móveis com AngularJS. Atualmente, estou focado em aprender Java, com ênfase no framework Spring. Estou procurando uma posição como desenvolvedor de software no Brasil, para onde pretendo voltar em setembro de 2024."
         }
     },
     "mediaLinks": [
@@ -40,69 +44,177 @@
     ],
     "workExperience": [
         {
-            "position": "IT Support",
-            "company": "Public administration",
+            "position": {
+                "en": "IT Support",
+                "fr": "Spécialiste en support logiciel",
+                "pt": "Especialista em suporte de software"
+            },
+            "company": "Centre informatique douanier",
             "location": "Paris - FR",
-            "period": "2018 - Present",
-            "description": "In my current role, I've specialized in analyzing XML flows and resolving incident tickets. I also contribute to the process of training and integrating new colleagues into the team. This experience has not only honed my technical skills, but also underlined the importance of effective teamwork and communication."
+            "period": {
+                "en": "2018 - Present",
+                "fr": "2018 - Actuel",
+                "pt": "2018 - Atual"
+            },
+            "description": {
+                "en": "In my current role, I've specialized in analyzing XML flows and resolving incident tickets. I also contribute to the process of training and integrating new colleagues into the team. This experience has not only honed my technical skills, but also underlined the importance of effective teamwork and communication.",
+                "fr": "Dans mon rôle actuel, je me suis spécialisé dans l’analyse des flux XML et la résolution des tickets d’incident. Je contribue également au processus de formation et d’intégration des nouveaux collègues dans l’équipe.",
+                "pt": "Na minha função atual, me especializei em analisar fluxos XML e solucionar problemas de tickets. Também contribuo para o processo de treinamento e integração de novos colegas na equipe."
+            }
         },
         {
-            "position": "JavaScript Developer",
+            "position": {
+                "en": "JavaScript Developer",
+                "fr": "Développeur Javascript",
+                "pt": "Desenvolvedor Javascript"
+            },
             "company": "Mobixio",
             "location": "Montpellier - FR",
-            "period": "2017 - 2018",
-            "description": "In 2017, I was employed as a JavaScript developer in Mobixio's app development team. I collaborated on the design and feature implementation of the Yoozcool app - a cross-platform mobile application designed for real-time tracking of the status of a transportation fleet, and facilitating direct communication channels with drivers. The platform was developed using Ionic, Cordova, AngularJS and Leaflet technologies. My adaptability enabled me to quickly master the AngularJS framework, making a significant contribution to the success of the project."
+            "period": {
+                "en": "2017 - 2018",
+                "fr": "2017 - 2018",
+                "pt": "2017 - 2018"
+            },
+            "description": {
+                "en": "In 2017, I was employed as a JavaScript developer in Mobixio's app development team. I collaborated on the design and feature implementation of the Yoozcool app - a cross-platform mobile application designed for real-time tracking of the status of a transportation fleet, and facilitating direct communication channels with drivers. The platform was developed using Ionic, Cordova, AngularJS and Leaflet technologies. My adaptability enabled me to quickly master the AngularJS framework, making a significant contribution to the success of the project.",
+                "fr": "En 2017, j'ai rejoint l'équipe de développement de Mobixio en tant que développeur Javascript, où j'ai contribué à la conception et à la mise en place de fonctionnalités pour l’application Yoozcool. Cette application mobile multiplateforme avait pour objectif de permettre le suivi en temps réel de l'état d'une flotte de transport. Pour ce projet, j'ai utilisé un ensemble de technologies comprenant Ionic, Cordova, AngularJS et Leaflet. ",
+                "pt": "Em 2017, integrei o time de desenvolvimento Mobixio na função de Desenvolvedor Javascript, onde contribuí para o design e implementação de funcionalidades do aplicativo Yoozcool. O objetivo desta aplicação móvel multiplataforma era permitir a monitorização em tempo real do estado de uma frota de transporte. Para este projeto, usei um conjunto de tecnologias, incluindo Ionic, Cordova, AngularJS, e Leaflet."
+            }
         },
         {
-            "position": "Software developer internship",
+            "position": {
+                "en": "Software developer internship",
+                "fr": "Stage de développeur logiciel",
+                "pt": "Estágio de desenvolvedor de software"
+            },
             "company": "O+ Studio",
             "location": "Montpellier - FR",
-            "period": "2016 (3 months)",
-            "description": "This end-of-studies internship, lasting ten weeks, carried out within the company O plus Studio, punctuated my training as a software developer followed at Objectif 3W. The work done during this internship allowed me to put my training into practice. Missions and tasks carried out: • model a MySQL database; • create a web application in PHP5; • implement unit tests."
+            "period": {
+                "en": "2016 (3 months)",
+                "fr": "2016 (3 mois)",
+                "pt": "2016 (3 meses)"
+            },
+            "description": {
+                "en": "This end-of-studies internship, lasting ten weeks, carried out within the company O plus Studio, punctuated my training as a software developer followed at Objectif 3W. The work done during this internship allowed me to put my training into practice. Missions and tasks carried out: • model a MySQL database; • create a web application in PHP5; • implement unit tests.",
+                "fr": "Ce stage de fin d'études de dix semaines chez O plus Studio a été l'aboutissement de ma formation en développement logiciel chez Objectif 3W. Le travail effectué durant ce stage m'a permis de mettre en pratique les thèmes enseignés durant la formation. Missions et tâches réalisées : • modéliser une base de données MySQL ; • créer une application web PHP5 ; • mise en place de tests unitaires. ",
+                "pt": "Este estágio de fim de curso, com duração de dez semanas, pontuou meu treinamento como desenvolvedor de software. O trabalho realizado durante este estágio me permitiu colocar em prática os temas ensinados durante o treinamento. Missões e tarefas realizadas: • Modelar um banco de dados MySQL; • Criar uma aplicação web PHP5. • Implementação de testes unitários"
+            }
         }
     ],
     "education": [
         {
-            "degree": "Bachelor's degree in Software Engineering",
+            "degree": {
+                "en": "Bachelor's degree in Software Engineering",
+                "fr": "Licence en ingénierie logicielle",
+                "pt": "Bacharelado em Engenharia de Software"
+            },
             "institution": "UNINTER",
-            "type": "Distance learning Bachelors",
+            "type": {
+                "en": "Distance learning Bachelors",
+                "fr": "Licence à distance",
+                "pt": "Bacharelado a distância"
+            },
             "location": "Santa Cruz do Sul - BR",
-            "period": "2023 - 2027",
-            "description": "The Software Engineering degree course focuses on the following areas: software development, software project management, architecture, testing and other activities in the software life cycle."
+            "period": {
+                "en": "2023 - 2027",
+                "fr": "2023 - 2027",
+                "pt": "2023 - 2027"
+            },
+            "description": {
+                "en": "The Software Engineering degree course focuses on the following areas: software development, software project management, architecture, testing and other activities in the software life cycle.",
+                "fr": "Le programme de la Licence en ingénierie logicielle se concentre sur les domaines suivants : développement logiciel, gestion de projet logiciel, architecture, tests et autres activités du cycle de vie logiciel.",
+                "pt": "O curso de Engenharia de Software se concentra nas seguintes áreas: desenvolvimento de software, gestão de projetos de software, arquitetura, testes e outras atividades no ciclo de vida do software."
+            }
         },
         {
-            "degree": "MOOC Introduction to Computer Science",
+            "degree": {
+                "en": "MOOC Introduction to Computer Science",
+                "fr": "MOOC Introduction à l'informatique",
+                "pt": "MOOC Introdução à Ciência da Computação"
+            },
             "institution": "CS50 - Harvard University",
-            "type": "MOOC",
+            "type": {
+                "en": "MOOC",
+                "fr": "MOOC",
+                "pt": "MOOC"
+            },
             "location": "",
-            "period": "2023",
-            "description": "This program covers concepts like abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. An introduction to a number of languages, including C, Python, SQL and JavaScript, as well as CSS and HTML."
+            "period": {
+                "en": "2023",
+                "fr": "2023",
+                "pt": "2023"
+            },
+            "description": {
+                "en": "This program covers concepts like abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. An introduction to a number of languages, including C, Python, SQL and JavaScript, as well as CSS and HTML.",
+                "fr": "Ce programme couvre des concepts tels que l'abstraction, les algorithmes, les structures de données, l'encapsulation, la gestion des ressources, la sécurité, l'ingénierie logicielle et le développement web. Une introduction à plusieurs langages, dont C, Python, SQL et JavaScript, ainsi que CSS et HTML.",
+                "pt": "Este programa abrange conceitos como abstração, algoritmos, estruturas de dados, encapsulamento, gestão de recursos, segurança, engenharia de software e desenvolvimento web. Uma introdução a várias linguagens, incluindo C, Python, SQL e JavaScript, além de CSS e HTML."
+            }
         },
         {
-            "degree": "Professional Title of Software Developer (1225 hours)",
+            "degree": {
+                "en": "Professional Title of Software Developer (1225 hours)",
+                "fr": "Titre professionnel de développeur logiciel (1225 heures)",
+                "pt": "Título profissional de Desenvolvedor de Software (1225 horas)"
+            },
             "institution": "OBJECTIF 3W",
-            "type": "Professional Title BAC +2",
+            "type": {
+                "en": "Professional Title BAC +2",
+                "fr": "Titre professionnel BAC +2",
+                "pt": "Título profissional BAC +2"
+            },
             "location": "Montpellier - FR",
-            "period": "2015  - 2016",
-            "description": "Proficient in a diverse range of programming languages, including XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, and UML. Skilled in MySQL DBMS, method of analysis and design of MERISE systems, and experienced in object-oriented programming."
+            "period": {
+                "en": "2015 - 2016",
+                "fr": "2015 - 2016",
+                "pt": "2015 - 2016"
+            },
+            "description": {
+                "en": "Main concepts covered: programming languages (XML, HTML5, CSS3, Javascript, jQuery, Ajax, PHP5, SQL, object modeling language - UML), MySQL DBMS, MERISE systems analysis and design method and object-oriented programming.",
+                "fr": "Principaux concepts abordés : langages de programmation (XML, HTML5, CSS3, Javascript, jQuery, Ajax, PHP5, SQL, langage de modélisation d'objets - UML), SGBD MySQL, Méthode d'analyse et de conception des systèmes MERISE et la programmation orientée objet.",
+                "pt": "Principais conceitos abordados: linguagens de programação (XML, HTML5, CSS3, Javascript, jQuery, Ajax, PHP5, SQL), MySQL DBMS, MERISE System Analysis and Design Method e Programação Orientada a Objetos."
+            }
         }
     ],
     "projects": [
         {
-            "title": "Java Spring API",
-            "description": "Creation of an API with starters such as Spring Web for web functionality, Spring Data JPA for data persistence management, and H2 Database for an in-memory database. Configuration of a Controller package for REST controllers, a Service package for business logic, a Repository package for interactions with the database, and a model package for entities. In the Controller package, create a class to manage CRUD (Create, Read, Update, Delete) operations.",
+            "title": {
+                "en": "Java Spring API",
+                "fr": "API Java Spring",
+                "pt": "API Java Spring"
+            },
+            "description": {
+                "en": "Creation of an API with starters such as Spring Web, Spring Data JPA for data persistence management, and H2 Database for an in-memory database. Configuration of a Controller package, a Service package for business logic, a Repository package for interactions with the database, and a model package for entities. In the Controller package, create a class to manage CRUD (Create, Read, Update, Delete) operations.",
+                "fr": "Création d'une API avec des starters tels que Spring Web, Spring Data JPA pour la gestion de la persistance des données, et H2 Database pour une base de données en mémoire. Configuration d'un package Controller, d'un package Service pour la logique métier, d'un package Repository pour les interactions avec la base de données et d'un package model pour les entités. Dans le package Controller, création d'une classe pour gérer les opérations CRUD (Créer, Lire, Mettre à jour, Supprimer).",
+                "pt": "Criação de uma API com starters como Spring Web, Spring Data JPA para gerenciamento de persistência de dados e H2 Database para um banco de dados em memória. Configuração de um package Controller, um package Service para lógica de negócios, um package Repository para interações com o banco de dados e um package model para entidades. No package Controller, criação de uma classe para gerenciar operações CRUD (Criar, Ler, Atualizar, Excluir)."
+            },
             "img": "api_img.jpg",
             "url": "https://github.com/eduardoschoepf/api"
         },
         {
-            "title": "Java Spring WebApp",
-            "description": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
+            "title": {
+                "en": "Java Spring WebApp",
+                "fr": "Application Web Java Spring",
+                "pt": "Aplicativo Web Java Spring"
+            },
+            "description": {
+                "en": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
+                "fr": "Création d'un outil de gestion des collaborateurs avec les fonctionnalités suivantes : afficher la liste des collaborateurs, ajouter un nouveau collaborateur, modifier ou supprimer un collaborateur. L'application se connecte à une API pour récupérer la liste des employés.",
+                "pt": "Criação de uma ferramenta de gerenciamento de funcionários com as seguintes funcionalidades: visualizar funcionários, adicionar um novo funcionário, modificar ou excluir um funcionário. O aplicativo se conecta a uma API para recuperar a lista de funcionários."
+            },
             "img": "webapp_img.jpg",
             "url": "https://github.com/eduardoschoepf/webapp"
         },
         {
-            "title": "Movies APP",
-            "description": "This application was developed as a result of my studies in React Native. The application connects to the TMDB API to retrieve information on movies and TV shows.",
+            "title": {
+                "en": "Movies APP",
+                "fr": "Application de films",
+                "pt": "Aplicativo de Filmes"
+            },
+            "description": {
+                "en": "This application was developed as a result of my studies in React Native. The application connects to the TMDB API to retrieve information on movies and TV shows.",
+                "fr": "Cette application a été développée à la suite de mes études en React Native. L'application se connecte à l'API TMDB pour récupérer des informations sur les films et les séries télévisées.",
+                "pt": "Este aplicativo foi desenvolvido como resultado de meus estudos em React Native. O aplicativo se conecta à API do TMDB para recuperar informações sobre filmes e programas de TV."
+            },
             "img": "movies_img.jpg",
             "url": "https://github.com/eduardoschoepf/movies"
         }
@@ -115,12 +227,28 @@
     ],
     "languages": [
         {
-            "language": "French",
-            "level": "Advanced"
+            "language": {
+                "en": "French",
+                "fr": "Français",
+                "pt": "Francês"
+            },
+            "level": {
+                "en": "Advanced",
+                "fr": "Avancé",
+                "pt": "Avançado"
+            }
         },
         {
-            "language": "Portugais",
-            "level": "Advanced"
+            "language": {
+                "en": "Portuguese",
+                "fr": "Portugais",
+                "pt": "Português"
+            },
+            "level": {
+                "en": "Advanced",
+                "fr": "Avancé",
+                "pt": "Avançado"
+            }
         }
     ],
     "certifications": [
