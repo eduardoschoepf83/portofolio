@@ -19,19 +19,10 @@ a {
     color: #aaaaaa;
 }
 
-#copyright {
-    text-align: center;
-    color: initial;
-}
-
 h1,
 h2,
 .job-title,
 .course-title,
 .project-title {
     color: #E2E8F0;
-}
-
-.language-options {
-    margin: 10px;
 }

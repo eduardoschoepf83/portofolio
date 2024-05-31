@@ -411,15 +411,16 @@ function addProjects(projects: Project[], language: string) {
       // Iterate through each project object in the array
       projects.forEach((elem) => {
         // Generate the HTML string for each project entry
-        projectsHTML += `
-          <div class='resume-entry'>
+        projectsHTML +=   `
+          <div class="badge">
             <a href=${elem.url} target='_blank'>
-              <img src='img/${elem.img}' alt='Project Image'>
+              <img src='img/${elem.img}' alt="Imagem do Badge" class="badge-image">
             </a>
-            <div class='project-title'>${elem.title[language as keyof typeof elem.title]}</div>
-            <p class='project-description'>${elem.description[language as keyof typeof elem.description]}</p>
+            <h2 class="badge-title">${elem.title[language as keyof typeof elem.title]}</h2>
+            <p class="badge-description">${elem.description[language as keyof typeof elem.description]}</p>
           </div>
         `;
+      
       });
 
       // Set the inner HTML of the 'projects' element

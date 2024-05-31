@@ -282,12 +282,12 @@ function addProjects(projects, language) {
             projects.forEach((elem) => {
                 // Generate the HTML string for each project entry
                 projectsHTML += `
-          <div class='resume-entry'>
+          <div class="badge">
             <a href=${elem.url} target='_blank'>
-              <img src='img/${elem.img}' alt='Project Image'>
+              <img src='img/${elem.img}' alt="Imagem do Badge" class="badge-image">
             </a>
-            <div class='project-title'>${elem.title[language]}</div>
-            <p class='project-description'>${elem.description[language]}</p>
+            <h2 class="badge-title">${elem.title[language]}</h2>
+            <p class="badge-description">${elem.description[language]}</p>
           </div>
         `;
             });

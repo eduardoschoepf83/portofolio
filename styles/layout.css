@@ -1,18 +1,10 @@
 .container {
     display: flex;
     overflow: hidden;
-    height: 95vh;
+    height: 84vh;
+    margin: 0 14rem 0 14rem;
 }
 
-.main {
-    flex: 1;
-    box-sizing: border-box;
-    overflow-y: auto;
-    margin: 6rem 20rem 6rem 0;
-    text-align: justify;
-    height: 75vh;
-}
-
-.main::-webkit-scrollbar {
-    display: none;
+.language-options {
+    margin: 2rem 2rem 2rem 14rem;
 }
