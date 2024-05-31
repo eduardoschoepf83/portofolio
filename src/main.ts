@@ -1,3 +1,12 @@
+interface Translation {
+  [key: string]: string;
+}
+
+interface Translations {
+  [key: string]: Translation;
+}
+
+
 interface PersonalInformation {
   name: string;
   address: string;
@@ -121,8 +130,64 @@ interface Profile {
   certifications: Certification[];
 }
 
+const translations: Translations = {
+  aboutMe: {
+    en: "About Me",
+    fr: "À propos de moi",
+    pt: "Sobre mim"
+  },
+  workExperience: {
+    en: "Work Experience",
+    fr: "Expérience professionnelle",
+    pt: "Experiência Profissional"
+  },
+  education: {
+    en: "Education",
+    fr: "Éducation",
+    pt: "Educação"
+  },
+  projects: {
+    en: "Projects",
+    fr: "Projets",
+    pt: "Projetos"
+  }
+}
+
+/**
+ * Sets the language of the page and updates section titles and anchor texts accordingly.
+ * 
+ * @param {string} lang - The language selected by the user.
+ * @returns {void}
+ */
+function setLanguage(lang: string): void {
+  // Select all sections with an ID attribute
+  const sections = document.querySelectorAll('section[id]');
+  
+  // Iterate over each section
+  sections.forEach(section => {
+    // Get the ID of the current section
+    const id = section.id;
+    
+    // Get the translated title for the current section and language
+    const title = translations[id][lang];
+    
+    // Update the corresponding anchor text to the translated title, if exists
+    const anchor = document.querySelector(`a[href="#${id}"]`);
+    if (anchor) {
+      anchor.textContent = title.toUpperCase(); // Set anchor text to uppercase
+    }
+    
+    // Update the section title with the translated title, if exists
+    const sectionTitle = document.querySelector(`#${id} h2`);
+    if (sectionTitle) {
+      sectionTitle.textContent = title;
+    }
+  });
+}
+
 /**
  * Loads and processes the JSON profile data based on the selected language.
+ * 
  * @param selectedLanguage The language selected by the user for displaying profile information.
  */
 async function loadAndProcessJSON(selectedLanguage: string) {
@@ -132,9 +197,9 @@ async function loadAndProcessJSON(selectedLanguage: string) {
 
     let defaultLanguage;
     if (selectedLanguage === "en" || selectedLanguage === "fr" || selectedLanguage === "pt") {
-        defaultLanguage = selectedLanguage;
+      defaultLanguage = selectedLanguage;
     } else {
-        defaultLanguage = "fr";
+      defaultLanguage = "fr";
     }
 
     addPersonalInformation(profileData.personalInformation, defaultLanguage);
@@ -156,8 +221,9 @@ async function loadAndProcessJSON(selectedLanguage: string) {
  * 
  * @param personalInformation An object containing the personal information data.
  * @param language The selected language for displaying the personal information.
+ * @returns {void}
  */
-function addPersonalInformation(personalInformation: PersonalInformation, language: string) {
+function addPersonalInformation(personalInformation: PersonalInformation, language: string): void {
   try {
     // Get the HTML element with the ID 'personalInformation'
     const divInformacoesPessoais = document.getElementById('personalInformation');
@@ -181,8 +247,9 @@ function addPersonalInformation(personalInformation: PersonalInformation, langua
  * Adds skills to the designated HTML element.
  * 
  * @param skills An array containing the skills to be added.
+ * @returns {void}
  */
-function addSkills(skills: string[]) {
+function addSkills(skills: string[]): void {
   try {
     // Get the HTML element with the ID 'personalInformation'
     const divExperienciaProfissional = document.getElementById("personalInformation");
@@ -219,8 +286,9 @@ function addSkills(skills: string[]) {
  * Adds media links for download to the designated HTML element.
  * 
  * @param mediaLinks An array of media link objects to be added.
+ * @returns {void}
  */
-function addMediasForDownload(mediaLinks: MediaLink[]) {
+function addMediasForDownload(mediaLinks: MediaLink[]): void {
   try {
     // Get the HTML element with the ID 'personalInformation'
     const divInformacoesPessoais = document.getElementById('personalInformation');
@@ -261,11 +329,12 @@ function addMediasForDownload(mediaLinks: MediaLink[]) {
  * Adds social media links to the designated HTML element.
  * 
  * @param socialMedias An array of social media objects to be added.
+ * @returns {void}
  */
-function addSocialMediaLinks(socialMedias: SocialMedia[]) {
+function addSocialMediaLinks(socialMedias: SocialMedia[]): void {
   try {
     // Get the HTML element with the ID 'social-medias'
-    const socialMediasHTML = document.getElementById('social-medias');
+    const socialMediasHTML = document.getElementById('socialMedias');
 
     // Check if the HTML element exists
     if (socialMediasHTML) {
@@ -299,11 +368,12 @@ function addSocialMediaLinks(socialMedias: SocialMedia[]) {
  * 
  * @param aboutMe An object containing summaries in different languages.
  * @param language The selected language for displaying the summary.
+ * @returns {void}
  */
-function addAboutMe(aboutMe: AboutMe, language: string) {
+function addAboutMe(aboutMe: AboutMe, language: string): void {
   try {
     // Get the HTML element with the ID 'about-me'
-    const aboutMeSection = document.getElementById('about-me');
+    const aboutMeSection = document.getElementById('aboutMe');
 
     // Check if the HTML element exists
     if (aboutMeSection) {
@@ -322,26 +392,24 @@ function addAboutMe(aboutMe: AboutMe, language: string) {
  * 
  * @param workExperience An array of work experience objects.
  * @param language The selected language for displaying work experience details.
+ * @returns {void}
  */
-function addWorkExperience(workExperience: WorkExperience[], language: string) {
+function addWorkExperience(workExperience: WorkExperience[], language: string): void {
   try {
     // Get the HTML element with the ID 'professional-activities'
-    const sectionWorkExperience = document.getElementById('professional-activities');
+    const sectionWorkExperience = document.querySelector('#workExperience .resume-entry');
 
     // Check if the HTML element exists
     if (sectionWorkExperience) {
-      let workExperienceHTML = '<h2>Work Experience</h2>';
-
+      let workExperienceHTML = '';
       // Iterate through each work experience object in the array
       workExperience.forEach((work) => {
         // Generate the HTML string for each work experience entry
-        workExperienceHTML += `
-          <div class='resume-entry'>
-            <div class='date-range'>${work.period[language as keyof typeof work.period]}</div>
-            <div class='job-title'>${work.position[language as keyof typeof work.position]}</div>
-            <div class='company-name'>${work.company}, ${work.location}</div>
-            <p class='job-description'>${work.description[language as keyof typeof work.description]}</p>
-          </div>
+        workExperienceHTML += ` 
+          <div class='date-range'>${work.period[language as keyof typeof work.period]}</div>
+          <div class='job-title'>${work.position[language as keyof typeof work.position]}</div>
+          <div class='company-name'>${work.company}, ${work.location}</div>
+          <p class='job-description'>${work.description[language as keyof typeof work.description]}</p>
         `;
       });
 
@@ -360,26 +428,25 @@ function addWorkExperience(workExperience: WorkExperience[], language: string) {
  * 
  * @param education An array of education objects.
  * @param language The selected language for displaying education details.
+ * @returns {void}
  */
-function addEducation(education: Education[], language: string) {
+function addEducation(education: Education[], language: string): void {
   try {
     // Get the HTML element with the ID 'education'
-    const sectionEducation = document.getElementById('education');
+    const sectionEducation = document.querySelector('#education .resume-entry');
 
     // Check if the HTML element exists
     if (sectionEducation) {
-      let educationHTML = '<h2>Education</h2>';
+      let educationHTML = '';
 
       // Iterate through each education object in the array
       education.forEach((elem) => {
         // Generate the HTML string for each education entry
         educationHTML += `
-        <div class='resume-entry'>
           <div class='date-range'>${elem.period[language as keyof typeof elem.period]}</div>
           <div class='course-title'>${elem.degree[language as keyof typeof elem.degree]}</div>
           <div class='educational-institution'>${elem.institution}</div>
           <p class='course-description'>${elem.description[language as keyof typeof elem.description]}</p>
-        </div>
           `;
       });
 
@@ -398,20 +465,21 @@ function addEducation(education: Education[], language: string) {
  * 
  * @param projects An array of project objects.
  * @param language The selected language for displaying project details.
+ * @returns {void}
  */
-function addProjects(projects: Project[], language: string) {
+function addProjects(projects: Project[], language: string): void {
   try {
     // Get the HTML element with the ID 'projects'
-    const sectionProjects = document.getElementById('projects');
+    const sectionProjects = document.querySelector('#projects .resume-entry');
 
     // Check if the HTML element exists
     if (sectionProjects) {
-      let projectsHTML = '<h2>Projects</h2>';
+      let projectsHTML = '';
 
       // Iterate through each project object in the array
       projects.forEach((elem) => {
         // Generate the HTML string for each project entry
-        projectsHTML +=   `
+        projectsHTML += `
           <div class="badge">
             <a href=${elem.url} target='_blank'>
               <img src='img/${elem.img}' alt="Imagem do Badge" class="badge-image">
@@ -420,7 +488,7 @@ function addProjects(projects: Project[], language: string) {
             <p class="badge-description">${elem.description[language as keyof typeof elem.description]}</p>
           </div>
         `;
-      
+
       });
 
       // Set the inner HTML of the 'projects' element
@@ -435,8 +503,10 @@ function addProjects(projects: Project[], language: string) {
 
 /**
  * Updates the copyright section with the current year.
+ * 
+ * @returns {void}
  */
-function addCopyright() {
+function addCopyright(): void {
   try {
     // Get the current year
     const currentYear = new Date().getFullYear();
@@ -458,11 +528,13 @@ function addCopyright() {
 
 /**
  * Sets up language buttons to load and process JSON data based on the selected language.
+ * 
+ * @returns {void}
  */
-function setupLanguageButtons() {
+function setupLanguageButtons(): void {
   try {
     // Select all language option buttons
-    const buttons = document.querySelectorAll('.language-options button');
+    const buttons = document.querySelectorAll('.language-options-btns button');
 
     // Add a click event listener to each button
     buttons.forEach(button => {
@@ -471,6 +543,9 @@ function setupLanguageButtons() {
         const selectedLanguage =  (button as HTMLElement).innerText.toUpperCase() === 'EN' ? 'en' :
                                   (button as HTMLElement).innerText.toUpperCase() === 'FR' ? 'fr' :
                                   'pt';
+
+        // Sets the language of titles for sections.   
+        setLanguage(selectedLanguage);
 
         // Load and process JSON data for the selected language
         loadAndProcessJSON(selectedLanguage);
@@ -482,8 +557,7 @@ function setupLanguageButtons() {
 }
 
 /**
- * Initializes the webpage by setting up language buttons and loading JSON data
- * based on the user's browser language.
+ * Initializes the webpage by setting up language buttons and loading JSON data based on the user's browser language.
  */
 document.addEventListener('DOMContentLoaded', () => {
   try {
@@ -497,6 +571,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set up language buttons
     setupLanguageButtons();
+
+    // Sets the language of titles for sections. 
+    setLanguage(userLanguage);
 
     // Load and process JSON data for the detected or default language
     loadAndProcessJSON(userLanguage);

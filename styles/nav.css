@@ -1,4 +1,4 @@
-.nav {
+.nav-container {
     flex: 1;
     box-sizing: border-box;
     padding: 6rem 0 6rem 0;
@@ -20,7 +20,7 @@ h1 {
     letter-spacing: -.025em;
 }
 
-.navigation {
+.nav-btns {
     padding: 6rem 0;
 }
 
@@ -30,7 +30,7 @@ h1 {
     line-height: 1.9rem;
 }
 
-.navigation a:hover span,
+.nav-btns a:hover span,
 a.active span {
     color: #E2E8F0;
 }

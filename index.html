@@ -54,7 +54,7 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Language options -->
-  <div class="language-options">
+  <div class="language-options-btns">
     <button id="btn-en">EN</button>
     <button id="btn-fr">FR</button>
     <button id="btn-pt">PT</button>
@@ -62,41 +62,45 @@
 
   <div class="container">
     <!-- Main navigation -->
-    <nav class="nav">
+    <nav class="nav-container">
       <div id="personalInformation" class="personal-info"></div>
 
       <!-- Navigation menu -->
-      <ul class="navigation">
+      <ul class="nav-btns">
         <li class="nav-item">
-          <a href="#about-me">
-            <span>ABOUT ME</span>
-          </a>
+          <a id="navAboutMe" href="#aboutMe">ABOUT ME</a>
         </li>
-        <li class="nav-item">
-          <a href="#professional-activities">
-            <span>WORK EXPERIENCE</span>
-          </a>
+        <li  class="nav-item">
+          <a id="navWorkExperience" href="#workExperience">WORK EXPERIENCE</a>
         </li>
-        <li class="nav-item">
-          <a href="#education">
-            <span>EDUCATION</span>
-          </a>
+        <li  class="nav-item">
+          <a id="navEducation" href="#education">EDUCATION</a>
         </li>
-        <li class="nav-item">
-          <a href="#projects">
-            <span>PROJECTS</span>
-          </a>
+        <li  class="nav-item">
+          <a id="navProjects" href="#projects">PROJECTS</a>
         </li>
       </ul>
-      <div id="social-medias" class="links-container"></div>
+      <div id="socialMedias" class="links-container"></div>
     </nav>
 
     <!-- Main content -->
     <main class="main">
-      <section id="about-me"></section>
-      <section id="professional-activities"></section>
-      <section id="education"></section>
-      <section id="projects"></section>
+      <section id="aboutMe">
+        <h2>About Me</h2>
+        <div class='resume-entry'></div>
+      </section>
+      <section id="workExperience">
+        <h2>Work Experience</h2>
+        <div class='resume-entry'></div>
+      </section>
+      <section id="education">
+        <h2>Eduacation</h2>
+        <div class='resume-entry'></div>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class='resume-entry'></div>
+      </section>
     </main>
   </div>
 

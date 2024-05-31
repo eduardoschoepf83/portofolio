@@ -10,7 +10,7 @@
     margin: 0 5rem 0 5rem;
   }
 
-  .language-options {
+  .language-options-btns {
     margin: 1rem 1rem 1rem 5rem;
   }
 
@@ -35,4 +35,9 @@
     margin: 5px;
     font-size: x-large;
   }
+  
+  .nav-item {
+    line-height: 2.5rem;
+  }
+
 }
