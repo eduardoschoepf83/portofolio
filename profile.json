@@ -193,8 +193,8 @@
         {
             "title": {
                 "en": "Java Spring WebApp",
-                "fr": "Application Web Java Spring",
-                "pt": "Aplicativo Web Java Spring"
+                "fr": "App Web Java Spring",
+                "pt": "App Web Java Spring"
             },
             "description": {
                 "en": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
@@ -207,8 +207,8 @@
         {
             "title": {
                 "en": "Movies APP",
-                "fr": "Application de films",
-                "pt": "Aplicativo de Filmes"
+                "fr": "Movies APP",
+                "pt": "Movies APP"
             },
             "description": {
                 "en": "This application was developed as a result of my studies in React Native. The application connects to the TMDB API to retrieve information on movies and TV shows.",
