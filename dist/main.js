@@ -201,7 +201,7 @@ function addSocialMediaLinks(socialMedias) {
         const socialMediasHTML = document.getElementById('socialMedias');
         // Check if the HTML element exists
         if (socialMediasHTML) {
-            let socialMediasConcat = '';
+            let socialMediasConcat = '<h3>Réseaux sociaux</h3>';
             // Iterate through each social media object in the array
             socialMedias.forEach(sm => {
                 // Determine the icon class based on the social media name
@@ -209,7 +209,7 @@ function addSocialMediaLinks(socialMedias) {
                 // Concatenate HTML string for each social media link
                 socialMediasConcat += `
           <a href='${sm.link}' target='_blank'>
-            <i class='fa-brands ${iconName} fa-2xl'></i>
+            <i class='fa-brands ${iconName} fa-2xl' style='color: #F5F5F9'></i>
           </a>
         `;
             });

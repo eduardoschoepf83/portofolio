@@ -3,6 +3,14 @@
     box-sizing: border-box;
 }
 
+#certificateLinks h3 {
+    margin: 0;
+}
+
+#socialMedias h3 {
+    margin: 0 0 20px 0;
+}
+
 .personal-info {
     letter-spacing: -.025em;
 }
@@ -20,7 +28,7 @@ h1 {
 }
 
 .nav-btns {
-    padding: 6rem 0;
+    padding: 5rem 0;
 }
 
 .nav-item {
