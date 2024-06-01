@@ -2,7 +2,6 @@
     flex: 1;
     box-sizing: border-box;
     overflow-y: auto;
-    margin: 6rem 0 6rem 0;
     text-align: justify;
     height: 75vh;
 }
@@ -73,7 +72,6 @@ a:hover img {
     color: #fff;
     background-color: #F97300;
     padding: 10px;
-
 }
 
 .badge-description {
