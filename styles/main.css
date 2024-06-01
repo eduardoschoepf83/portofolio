@@ -54,7 +54,7 @@ a:hover img {
 .badge {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 1%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: justify;
     padding: 20px;
@@ -65,12 +65,15 @@ a:hover img {
 .badge-image {
     width: 100%;
     height: auto;
-    border-radius: 5%;
+    border-radius: 1%;
 }
 
 .badge-title {
     margin: 15px 0 10px;
-    color: #333;
+    color: #fff;
+    background-color: #072c8d;
+    padding: 10px;
+
 }
 
 .badge-description {
