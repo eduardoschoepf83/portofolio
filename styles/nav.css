@@ -3,12 +3,20 @@
     box-sizing: border-box;
 }
 
+#certificateLinks {
+    margin-bottom: 10px;
+}
+
 #certificateLinks h3 {
-    margin: 0;
+    margin-bottom: 10px;
+}
+
+#socialMedias {
+    margin-bottom: 10px;
 }
 
 #socialMedias h3 {
-    margin: 0 0 20px 0;
+    margin-bottom: 30px;
 }
 
 .personal-info {
