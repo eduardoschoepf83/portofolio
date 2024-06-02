@@ -569,14 +569,12 @@ function setupLanguageButtons(): void {
 /**
  * Initializes the webpage by setting up language buttons and loading JSON data based on the user's browser language.
  */
-// Get the user's browser language or default to 'fr'
-let userLanguage = navigator.language || 'fr';
 
 // Set up language buttons
 setupLanguageButtons();
 
 // Sets the language of titles for sections. 
-setLanguage(userLanguage);
+setLanguage('fr');
 
 // Load and process JSON data for the detected or default language
-loadAndProcessJSON(userLanguage);
+loadAndProcessJSON('fr');
