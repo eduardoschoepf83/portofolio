@@ -419,18 +419,11 @@ function setupLanguageButtons() {
 /**
  * Initializes the webpage by setting up language buttons and loading JSON data based on the user's browser language.
  */
-document.addEventListener('DOMContentLoaded', () => {
-    try {
-        // Get the user's browser language or default to 'fr'
-        let userLanguage = navigator.language || 'fr';
-        // Set up language buttons
-        setupLanguageButtons();
-        // Sets the language of titles for sections. 
-        setLanguage(userLanguage);
-        // Load and process JSON data for the detected or default language
-        loadAndProcessJSON(userLanguage);
-    }
-    catch (error) {
-        console.error('An error occurred during initialization:', error);
-    }
-});
+// Get the user's browser language or default to 'fr'
+let userLanguage = navigator.language || 'fr';
+// Set up language buttons
+setupLanguageButtons();
+// Sets the language of titles for sections. 
+setLanguage(userLanguage);
+// Load and process JSON data for the detected or default language
+loadAndProcessJSON(userLanguage);
