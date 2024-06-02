@@ -28,6 +28,16 @@ const translations = {
         en: "Projects",
         fr: "Projets",
         pt: "Projetos"
+    },
+    certificates: {
+        en: "Certificates",
+        fr: "Certificats",
+        pt: "Certificados"
+    },
+    socialNetworks: {
+        en: "Social networks",
+        fr: "Réseaux sociaux",
+        pt: "Redes sociais"
     }
 };
 /**
@@ -67,20 +77,17 @@ function loadAndProcessJSON(selectedLanguage) {
         try {
             const response = yield fetch("./profile.json");
             const profileData = yield response.json();
-            let defaultLanguage;
-            if (selectedLanguage === "en" || selectedLanguage === "fr" || selectedLanguage === "pt") {
-                defaultLanguage = selectedLanguage;
+            // Ensure the user language is one of the supported languages ('en', 'fr', 'pt')
+            if (selectedLanguage !== "en" && selectedLanguage !== "fr" && selectedLanguage !== "pt") {
+                selectedLanguage = "fr";
             }
-            else {
-                defaultLanguage = "fr";
-            }
-            addPersonalInformation(profileData.personalInformation, defaultLanguage);
+            addPersonalInformation(profileData.personalInformation, selectedLanguage);
             addSkills(profileData.skills);
             addSocialMediaLinks(profileData.socialMedias);
-            addAboutMe(profileData.aboutMe, defaultLanguage);
-            addWorkExperience(profileData.workExperience, defaultLanguage);
-            addEducation(profileData.education, defaultLanguage);
-            addProjects(profileData.projects, defaultLanguage);
+            addAboutMe(profileData.aboutMe, selectedLanguage);
+            addWorkExperience(profileData.workExperience, selectedLanguage);
+            addEducation(profileData.education, selectedLanguage);
+            addProjects(profileData.projects, selectedLanguage);
             addCopyright();
         }
         catch (error) {
@@ -104,7 +111,7 @@ function addPersonalInformation(personalInformation, language) {
             // Set the inner HTML of the element with the name and job title based on the selected language
             divInformacoesPessoais.innerHTML = `
         <h1 class='name'>${personalInformation.name}</h1>
-        <h2 class='my-job-title'>${personalInformation.desiredPosition[language]}</h2>
+        <h2 class='job-title'>${personalInformation.desiredPosition[language]}</h2>
       `;
         }
         else {
@@ -202,17 +209,19 @@ function addSocialMediaLinks(socialMedias) {
         // Check if the HTML element exists
         if (socialMediasHTML) {
             let socialMediasConcat = '<h3>Réseaux sociaux</h3>';
+            socialMediasConcat += '<div>';
             // Iterate through each social media object in the array
             socialMedias.forEach(sm => {
                 // Determine the icon class based on the social media name
                 const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
                 // Concatenate HTML string for each social media link
                 socialMediasConcat += `
-          <a href='${sm.link}' target='_blank'>
+          <a class="icon-link" href='${sm.link}' target='_blank'>
             <i class='fa-brands ${iconName} fa-2xl' style='color: #F5F5F9'></i>
           </a>
         `;
             });
+            socialMediasConcat += '</div>';
             // Set the inner HTML of the 'social-medias' element
             socialMediasHTML.innerHTML = socialMediasConcat;
         }
@@ -388,7 +397,7 @@ function addCopyright() {
 function setupLanguageButtons() {
     try {
         // Select all language option buttons
-        const buttons = document.querySelectorAll('.language-options-btns button');
+        const buttons = document.querySelectorAll('.language-selector button');
         // Add a click event listener to each button
         buttons.forEach(button => {
             button.addEventListener('click', () => {
@@ -414,10 +423,6 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
         // Get the user's browser language or default to 'fr'
         let userLanguage = navigator.language || 'fr';
-        // Ensure the user language is one of the supported languages ('en', 'fr', 'pt')
-        if (userLanguage !== "en" && userLanguage !== "fr" && userLanguage !== "pt") {
-            userLanguage = "fr";
-        }
         // Set up language buttons
         setupLanguageButtons();
         // Sets the language of titles for sections. 

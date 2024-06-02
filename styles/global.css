@@ -26,3 +26,17 @@ h2,
 .project-title {
     color: #E2E8F0;
 }
+
+@media (max-width: 980px) {
+    body {
+      max-height: max-content;
+      font-size: 2rem;
+    }
+
+    button {
+        height: 3rem;
+        width: 5rem;
+        margin: 5px;
+        font-size: x-large;
+      }
+}

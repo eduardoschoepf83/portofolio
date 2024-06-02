@@ -1,0 +1,77 @@
+.right-column {
+    box-sizing: border-box;
+    overflow-y: auto;
+    text-align: justify;
+    height: 84vh;
+    width: 40%;
+
+}
+
+.right-column::-webkit-scrollbar {
+    display: none;
+}
+
+#aboutMe {
+    line-height: 1.5;
+}
+
+#workExperience,
+#education,
+#projects {
+    padding-top: 2rem;
+}
+
+.right-column section {
+    margin: 10px;
+}
+
+section .resume-entry {
+    margin-bottom: 50px;
+}
+
+.badge a img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+}
+
+.badge a:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.badge {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 1%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    padding: 20px;
+    max-width: 75vw;
+    margin-bottom: 50px;
+}
+
+.badge-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1%;
+}
+
+.badge-title {
+    margin: 15px 0 10px;
+    color: #fff;
+    background-color: #F97300;
+    padding: 10px;
+}
+
+.badge-description {
+    font-size: 1em;
+    color: #666;
+}
+
+@media (max-width: 980px) {
+    .right-column {
+        height: auto;
+    }
+}

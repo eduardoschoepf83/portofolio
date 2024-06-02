@@ -1,0 +1,10 @@
+.language-selector {
+    height: 4rem;
+    padding-left: 12%;
+}
+
+.language-selector button{
+    height: 2rem;
+    width: 3rem;
+    margin: 1%;
+}

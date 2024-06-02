@@ -1,80 +1,30 @@
-.main {
-    flex: 1;
-    box-sizing: border-box;
-    overflow-y: auto;
-    text-align: justify;
-    height: 75vh;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    padding-bottom: 10px;
 }
 
-.main::-webkit-scrollbar {
-    display: none;
-}
-
-#aboutMe {
-    line-height: 1.5;
-}
-
-#workExperience,
-#education,
-#projects {
-    padding-top: 2rem;
-}
-
-.links-container {
-    position: absolute;
-    bottom: 6rem;
-    padding: 10px 0;
-}
-
-.links-container a {
-    padding: 5px;
-}
-
-.main section {
-    margin: 10px;
-}
-
-section .resume-entry {
-    margin-bottom: 50px;
-}
-
-a img {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 10px 0 10px 0;
-}
-
-a:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.badge {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 1%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: justify;
+.left-column, .right-column {
     padding: 20px;
-    max-width: 75vw;
-    margin-bottom: 50px;
+    box-sizing: border-box;
 }
 
-.badge-image {
-    width: 100%;
-    height: auto;
-    border-radius: 1%;
-}
+@media (max-width: 980px) {
+    main {
+        justify-content: normal;
+        
+    }
 
-.badge-title {
-    margin: 15px 0 10px;
-    color: #fff;
-    background-color: #F97300;
-    padding: 10px;
-}
+    main .left-column, main .right-column {
+        width: 100%;
+    }
 
-.badge-description {
-    font-size: 1em;
-    color: #666;
+    .container {
+        flex-direction: column;
+        height: auto;
+        margin: 0 5rem 0 5rem;
+    }
+
 }
