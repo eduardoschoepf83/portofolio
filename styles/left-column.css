@@ -70,4 +70,8 @@ a.active {
     .icon-link {
         padding-right: 3rem;
     }
+
+    #certificateLinks h3, #socialMedias h3 {
+        margin-bottom: inherit;
+    }
 }
