@@ -163,6 +163,18 @@ const translations: Translations = {
   }
 }
 
+const SUPPORTED_LANGUAGES = ['en', 'fr', 'pt'];
+
+/**
+ * Checks if the given language is one of the supported languages.
+ * 
+ * @param {string} language - The language code to check.
+ * @returns {boolean} - Returns true if the language is supported, false otherwise.
+ */
+function isSupportedLanguage(language: string): boolean {
+  return SUPPORTED_LANGUAGES.includes(language);
+}
+
 /**
  * Sets the language of the page and updates section titles and anchor texts accordingly.
  * 
@@ -206,9 +218,7 @@ async function loadAndProcessJSON(selectedLanguage: string) {
     const profileData: Profile = await response.json();
 
     // Ensure the user language is one of the supported languages ('en', 'fr', 'pt')
-    if (selectedLanguage !== "en" && selectedLanguage !== "fr" && selectedLanguage !== "pt") {
-      selectedLanguage = "fr";
-    }
+    selectedLanguage = isSupportedLanguage(selectedLanguage) ? selectedLanguage : 'fr';
 
     addPersonalInformation(profileData.personalInformation, selectedLanguage);
     addSkills(profileData.skills);
@@ -567,7 +577,7 @@ function setupLanguageButtons(): void {
 }
 
 /**
- * Initializes the webpage by setting up language buttons and loading JSON data based on the user's browser language.
+ * Initializes the webpage by setting up language buttons and loading JSON data.
  */
 
 // Set up language buttons

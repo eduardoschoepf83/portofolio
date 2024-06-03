@@ -40,6 +40,10 @@ const translations = {
         pt: "Redes sociais"
     }
 };
+const SUPPORTED_LANGUAGES = ['en', 'fr', 'pt'];
+function isSupportedLanguage(language) {
+    return SUPPORTED_LANGUAGES.includes(language);
+}
 /**
  * Sets the language of the page and updates section titles and anchor texts accordingly.
  *
@@ -417,7 +421,7 @@ function setupLanguageButtons() {
     }
 }
 /**
- * Initializes the webpage by setting up language buttons and loading JSON data based on the user's browser language.
+ * Initializes the webpage by setting up language buttons and loading JSON data.
  */
 // Set up language buttons
 setupLanguageButtons();
