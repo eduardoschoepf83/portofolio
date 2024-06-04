@@ -40,11 +40,11 @@ a.active {
     margin: 5px;
 }
 
-#certificateLinks, #socialMedias {
+#certificateLinks, #socialNetworks {
     margin-bottom: 3rem;
 }
 
-#certificateLinks h3, #socialMedias h3 {
+#certificateLinks h3, #socialNetworks h3 {
     margin-bottom: 5px;
 }
 
@@ -71,7 +71,7 @@ a.active {
         padding-right: 3rem;
     }
 
-    #certificateLinks h3, #socialMedias h3 {
+    #certificateLinks h3, #socialNetworks h3 {
         margin-bottom: inherit;
     }
 }

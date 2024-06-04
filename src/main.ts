@@ -1,3 +1,4 @@
+
 interface Translation {
   [key: string]: string;
 }
@@ -5,7 +6,6 @@ interface Translation {
 interface Translations {
   [key: string]: Translation;
 }
-
 
 interface PersonalInformation {
   name: string;
@@ -25,7 +25,7 @@ interface MediaLink {
   address: string;
 }
 
-interface SocialMedia {
+interface SocialNetworks {
   name: string;
   link: string;
 }
@@ -121,7 +121,7 @@ interface Profile {
   personalInformation: PersonalInformation;
   skills: string[];
   mediaLinks: MediaLink[];
-  socialMedias: SocialMedia[];
+  socialNetworks: SocialNetworks[];
   aboutMe: AboutMe;
   workExperience: WorkExperience[];
   education: Education[];
@@ -204,7 +204,14 @@ function setLanguage(lang: string): void {
     if (sectionTitle) {
       sectionTitle.textContent = title;
     }
+
   });
+
+  // Update the title of the certificate section with the translated title, if exists
+  const certificates = document.getElementById("certificates");
+  if (certificates) {
+    certificates.getElementsByTagName('h3')[0].innerText = translations["certificates"][lang];
+  }
 }
 
 /**
@@ -222,7 +229,7 @@ async function loadAndProcessJSON(selectedLanguage: string) {
 
     addPersonalInformation(profileData.personalInformation, selectedLanguage);
     addSkills(profileData.skills);
-    addSocialMediaLinks(profileData.socialMedias);
+    addSocialNetworksLinks(profileData.socialNetworks, selectedLanguage);
     addAboutMe(profileData.aboutMe, selectedLanguage);
     addWorkExperience(profileData.workExperience, selectedLanguage);
     addEducation(profileData.education, selectedLanguage);
@@ -346,35 +353,36 @@ function addMediasForDownload(mediaLinks: MediaLink[]): void {
 /**
  * Adds social media links to the designated HTML element.
  * 
- * @param socialMedias An array of social media objects to be added.
+ * @param socialNetworks An array of social media objects to be added.
  * @returns {void}
  */
-function addSocialMediaLinks(socialMedias: SocialMedia[]): void {
+function addSocialNetworksLinks(socialNetworks: SocialNetworks[], selectedLanguage: string): void {
   try {
     // Get the HTML element with the ID 'social-medias'
-    const socialMediasHTML = document.getElementById('socialMedias');
+    const socialNetworksHTML = document.getElementById('socialNetworks');
 
     // Check if the HTML element exists
-    if (socialMediasHTML) {
-      let socialMediasConcat = '<h3>Réseaux sociaux</h3>';
-      socialMediasConcat += '<div>';
+    if (socialNetworksHTML) {
+      console.log(translations['socialNetworks'][selectedLanguage]);
+      let socialNetworksConcat = `<h3>${translations['socialNetworks'][selectedLanguage]}</h3>`;
+      socialNetworksConcat += '<div>';
       // Iterate through each social media object in the array
-      socialMedias.forEach(sm => {
+      socialNetworks.forEach(sm => {
         // Determine the icon class based on the social media name
         const iconName = sm.name === 'linkedin' ? 'fa-linkedin' : 'fa-square-github';
 
         // Concatenate HTML string for each social media link
-        socialMediasConcat += `
+        socialNetworksConcat += `
           <a class="icon-link" href='${sm.link}' target='_blank'>
             <i class='fa-brands ${iconName} fa-2xl' style='color: #F5F5F9'></i>
           </a>
         `;
       });
 
-      socialMediasConcat += '</div>';
+      socialNetworksConcat += '</div>';
 
       // Set the inner HTML of the 'social-medias' element
-      socialMediasHTML.innerHTML = socialMediasConcat;
+      socialNetworksHTML.innerHTML = socialNetworksConcat;
     } else {
       console.warn("The element with ID 'social-medias' was not found.");
     }
