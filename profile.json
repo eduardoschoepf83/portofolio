@@ -128,6 +128,30 @@
         },
         {
             "degree": {
+                "en": "Professional Title of Software Developer (350 hours)",
+                "fr": "Développeur d’applications mobiles (350 heures)",
+                "pt": "Desenvolvedor de aplicativos móveis (350 horas)"
+            },
+            "institution": "HUMAN BOOSTER",
+            "type": {
+                "en": "350-hour training course",
+                "fr": "Formation de 350 heures",
+                "pt": "Treinamento de 350 horas"
+            },
+            "location": "Montpellier - FR",
+            "period": {
+                "en": "2016",
+                "fr": "2016",
+                "pt": "2016"
+            },
+            "description": {
+                "en": "Introduction to the Swift programming language for developing IOS applications and the Java language for developing Android applications.",
+                "fr": "Initiation au langage de programmation Swift pour le développement d’applications IOS et au langage Java pour le développement d’applications Android.",
+                "pt": "Introdução à linguagem de programação Swift para o desenvolvimento de aplicativos IOS e à linguagem Java para o desenvolvimento de aplicativos Android."
+            }
+        },
+        {
+            "degree": {
                 "en": "Professional Title of Software Developer (1225 hours)",
                 "fr": "Titre professionnel de développeur logiciel (1225 heures)",
                 "pt": "Título profissional de Desenvolvedor de Software (1225 horas)"
