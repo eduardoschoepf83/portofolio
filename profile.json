@@ -121,9 +121,9 @@
                 "pt": "2023 - 2027"
             },
             "description": {
-                "en": "The Software Engineering degree course focuses on the following areas: software development, software project management, architecture, testing and other activities in the software life cycle.",
+                "en": "The software engineering curriculum focuses on project management, software architecture, algorithms, data structures, software development ethics and legislation.",
                 "fr": "Le programme de formation en génie logiciel est axé sur la gestion de projet, l'architecture logicielle, les algorithmes, les structures de données, l'éthique et la législation en matière de développement de logiciels.",
-                "pt": "O curso de Engenharia de Software aborda os seguintes temas: desenvolvimento de software, gestão de projetos de software, arquitetura, testes e outras atividades no ciclo de vida do software."
+                "pt": "O programa da graduação em engenharia de software da Uninter tem como foco o gerenciamento de projetos, a arquitetura de software, algoritmos e estruturas de dados, a ética e legislação no desenvolvimento de software e outras atividades do ciclo de vida do software."
             }
         },
         {
@@ -169,9 +169,9 @@
                 "pt": "2015 - 2016"
             },
             "description": {
-                "en": "Main concepts covered: programming languages (XML, HTML5, CSS3, Javascript, jQuery, Ajax, PHP5, SQL, object modeling language - UML), MySQL DBMS, MERISE systems analysis and design method and object-oriented programming.",
-                "fr": "Principaux concepts abordés : langages de programmation (XML, HTML5, CSS3, Javascript, jQuery, Ajax, PHP5, SQL, langage de modélisation d'objets - UML), SGBD MySQL, Méthode d'analyse et de conception des systèmes MERISE et la programmation orientée objet.",
-                "pt": "Principais conceitos abordados: linguagens de programação (XML, HTML5, CSS3, Javascript, jQuery, Ajax, PHP5, SQL), MySQL DBMS, MERISE System Analysis and Design Method e Programação Orientada a Objetos."
+                "en": "This program includes fundamental concepts such as algorithms, data structures and object-oriented programming. It includes learning the following programming languages and technologies: UML (object modeling language), PHP5, SQL, JavaScript, jQuery, Ajax, XML, HTML5 and CSS3.",
+                "fr": "Ce programme couvre des concepts fondamentaux tels que les algorithmes, les structures de données et la programmation orientée objet. Il inclut l'apprentissage des langages de programmation et technologies suivants : UML (langage de modélisation d'objets), PHP5, SQL, JavaScript, jQuery, Ajax, XML, HTML5 et CSS3.",
+                "pt": "Este programa abrange conceitos fundamentais, como algoritmos, estruturas de dados e programação orientada a objetos. Ele inclui o aprendizado das seguintes linguagens e tecnologias de programação: UML (linguagem de modelagem de objetos), PHP5, SQL, JavaScript, jQuery, Ajax, XML, HTML5 e CSS3."
             }
         }
     ],
