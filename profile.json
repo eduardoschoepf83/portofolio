@@ -15,7 +15,7 @@
         "summary": {
             "en": "Hi there, I'm Eduardo Schoepf, and my journey into the world of software development began in 2016, when I obtained my professional title of software developer. These studies allowed me to develop my skills in XML, HTML5, CSS3, JavaScript, jQuery, Ajax, PHP5, SQL, UML, MySQL and object-oriented programming. It was also an opportunity to put my theoretical learning into practice during a three-month internship, during which I had the chance to develop a web application in PHP5, model a MySQL database and set up unit tests. In 2017, I started my programming career at a startup in Montpellier, in the south of France, where I took part in a project to develop a multiplatform application with Ionic, Cordova and AngularJS. A year later, I made the transition to the public sector. My current role involves analyzing XML flows and resolving incident tickets, as well as contributing to the integration of new colleagues. Passionate about the field of software development, I'm currently studying software engineering and am looking for a challenge in a software development team.",
             "fr": "Développeur JavaScript confirmé, j'ai contribué à la conception et à la mise en place de fonctionnalités d’une application mobile multiplateforme en AngularJS. Je poursuis actuellement des études en Ingénierie logicielle et j'ai un intérêt particulier pour le langage Java et, plus précisément, pour le Framework Spring. Je suis à la recherche d'un challenge en tant que Développeur Java.",
-            "pt": "Sou programador Javascript com experiência no desenvolvimento de aplicativos móveis baseados em AngularJS. Atualmente moro na França, mas meu objetivo é voltar ao Brasil. No momento, estou epenhado em aprender Java, com ênfase no framework Spring. Estou procurando uma oportunidade de trabalho como desenvolvedor de software."
+            "pt": "Desenvolvedor de software com experiência em JavaScript e AngularJS, atualmente focado em aprender Java, com ênfase no framework Spring. Estou buscando novas oportunidades no Brasil a partir de dezembro de 2024."
         }
     },
     "mediaLinks": [
@@ -58,8 +58,8 @@
             },
             "description": {
                 "en": "In my current role, I have developed expertise in analyzing XML and JSON flows to detect technical and functional problems and offer solutions to users. I also contribute to the process of training and integrating new team members, strengthening our collaboration and collective efficiency. As a developer, I have created solutions to simplify repetitive tasks for the support team, such as contextual menus to perform searches from a selection of text. This ability to improve operational processes is the result of my solid experience in software development.",
-                "fr": "Dans mon rôle actuel, j'ai développé une expertise dans l'analyse des flux XML et JSON afin de détecter les problèmes techniques et fonctionnels et de fournir des solutions aux utilisateurs. De plus, je contribue au processus de formation et d’intégration des nouveaux membres de l’équipe, renforçant ainsi notre collaboration et notre efficacité collective. En tant que programmeur, j'ai créé des solutions pour l'équipe d'assistance dans le but de simplifier les tâches répétitives, telles que des extensions web qui créent des menus contextuels pour la recherche par sélection de texte. Cette capacité à améliorer les processus opérationnels est le résultat de ma solide expérience dans le développement logiciel.",
-                "pt": "Na minha função atual, desenvolvi expertise na análise de fluxos XML e JSON para detectar problemas técnicos e funcionais e oferecer soluções aos usuários. Também contribuo com o processo de treinamento e integração de novos membros da equipe, fortalecendo nossa colaboração e eficiência coletiva. Como programador, criei soluções para simplificar tarefas repetitivas da equipe de suporte, como menus contextuais para efetuar buscas a partir de uma seleção de texto. Minha experiência em desenvolvimento de software tem sido essencial para aprimorar esses processos operacionais e tornar o serviço mais eficaz."
+                "fr": "Je suis actuellement affecté à un service chargé de traiter les anomalies dans le système douanier.  J'ai développé une expertise dans l'analyse des flux XML et JSON pour résoudre les problèmes techniques et fonctionnels dans les déclarations d'importation et d'exportation. J'ai créé des solutions pour l'équipe d'assistance dans le but de simplifier les tâches répétitives. Par exemple, j'ai développé des extensions web qui permettent de créer des menus contextuels facilitant la recherche par sélection de texte. Mon expérience en matière de développement de logiciels a été essentielle pour améliorer ces processus opérationnels et rendre le service plus efficace.",
+                "pt": "Atualmente, trabalho em um serviço responsável por tratar as anomalias no sistema alfandegário. Na minha função atual, desenvolvi expertise na análise de fluxos XML e JSON para solucionar problemas técnicos e funcionais nas declarações de importação e exportação. Também contribuo com o processo de treinamento e integração de novos membros da equipe, fortalecendo nossa colaboração e eficiência coletiva. Como programador, criei soluções para simplificar tarefas repetitivas da equipe de suporte, como menus contextuais para efetuar buscas a partir de uma seleção de texto. Minha experiência em desenvolvimento de software tem sido essencial para aprimorar esses processos operacionais e tornar o serviço mais eficaz."
             }
         },
         {
@@ -105,7 +105,7 @@
         {
             "degree": {
                 "en": "Bachelor's degree in Software Engineering",
-                "fr": "Bachelor en génie logiciel (BAC +4)",
+                "fr": "Software Engineering (BAC +4)",
                 "pt": "Bacharelado em Engenharia de Software"
             },
             "institution": "UNINTER",
@@ -122,32 +122,8 @@
             },
             "description": {
                 "en": "The Software Engineering degree course focuses on the following areas: software development, software project management, architecture, testing and other activities in the software life cycle.",
-                "fr": "Le programme du Bachelor en Génie logiciel aborde les thèmes suivants : développement logiciel, gestion de projet logiciel, architecture, tests et autres activités du cycle de vie logiciel.",
+                "fr": "Le programme de formation en génie logiciel est axé sur la gestion de projet, l'architecture logicielle, les algorithmes, les structures de données, l'éthique et la législation en matière de développement de logiciels.",
                 "pt": "O curso de Engenharia de Software aborda os seguintes temas: desenvolvimento de software, gestão de projetos de software, arquitetura, testes e outras atividades no ciclo de vida do software."
-            }
-        },
-        {
-            "degree": {
-                "en": "MOOC Introduction to Computer Science",
-                "fr": "MOOC Introduction à l'informatique",
-                "pt": "MOOC Introdução à Ciência da Computação"
-            },
-            "institution": "CS50 - Harvard University",
-            "type": {
-                "en": "MOOC",
-                "fr": "MOOC",
-                "pt": "MOOC"
-            },
-            "location": "",
-            "period": {
-                "en": "2023",
-                "fr": "2023",
-                "pt": "2023"
-            },
-            "description": {
-                "en": "This program covers concepts like abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. An introduction to a number of languages, including C, Python, SQL and JavaScript, as well as CSS and HTML.",
-                "fr": "Ce programme couvre des concepts tels que l'abstraction, les algorithmes, les structures de données, l'encapsulation, la gestion des ressources, la sécurité, l'ingénierie logicielle et le développement web. Une introduction à plusieurs langages, dont C, Python, SQL et JavaScript, ainsi que CSS et HTML.",
-                "pt": "Este programa abrange conceitos como abstração, algoritmos, estruturas de dados, encapsulamento, gestão de recursos, segurança, engenharia de software e desenvolvimento web. Uma introdução a várias linguagens, incluindo C, Python, SQL e JavaScript, além de CSS e HTML."
             }
         },
         {
