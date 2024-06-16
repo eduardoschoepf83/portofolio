@@ -178,6 +178,20 @@
     "projects": [
         {
             "title": {
+                "en": "Movies WebApp",
+                "fr": "Movies WebApp",
+                "pt": "Movies WebApp"
+            },
+            "description": {
+                "en": "Movies is a web application developed with Java Spring Boot. It allows users to browse popular movies based on The Movie Database (TMDb) API.",
+                "fr": "Movies est une application web développée avec Java Spring Boot. Elle permet aux utilisateurs de parcourir les films les plus populaires en se basant sur l'API de The Movie Database (TMDb).",
+                "pt": "Movies é uma aplicação Web desenvolvida com Java Spring Boot. Permite aos utilizadores pesquisar filmes populares com base na API da base de dados de filmes (TMDb)."
+            },
+            "img": "movies_webapp.png",
+            "url": "https://github.com/eduardoschoepf/movies-webapp"
+        },
+        {
+            "title": {
                 "en": "Java Spring API",
                 "fr": "API Java Spring",
                 "pt": "API Java Spring"
