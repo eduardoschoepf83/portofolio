@@ -215,7 +215,7 @@
                 "fr": "Création d'un outil de gestion des collaborateurs avec les fonctionnalités suivantes : afficher la liste des collaborateurs, ajouter un nouveau collaborateur, modifier ou supprimer un collaborateur. L'application se connecte à une API pour récupérer la liste des employés.",
                 "pt": "Criação de uma ferramenta de gerenciamento de funcionários com as seguintes funcionalidades: visualizar funcionários, adicionar um novo funcionário, modificar ou excluir um funcionário. O aplicativo se conecta a uma API para recuperar a lista de funcionários."
             },
-            "img": "employees_webapp.jpg",
+            "img": "employees_webapp.png",
             "url": "https://github.com/eduardoschoepf/webapp"
         },
         {
@@ -229,7 +229,7 @@
                 "fr": "Cette application a été développée à la suite de mes études en React Native. L'application se connecte à l'API TMDB pour récupérer des informations sur les films et les séries télévisées.",
                 "pt": "Este aplicativo foi desenvolvido como resultado de meus estudos em React Native. O aplicativo se conecta à API do TMDB para recuperar informações sobre filmes e programas de TV."
             },
-            "img": "movies_app.jpg",
+            "img": "movies_app.png",
             "url": "https://github.com/eduardoschoepf/movies"
         }
     ],
