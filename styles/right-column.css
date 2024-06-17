@@ -29,18 +29,6 @@ section .resume-entry {
     margin-bottom: 50px;
 }
 
-.badge a img {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 10px 0 10px 0;
-}
-
-.badge a:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
 .badge {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -66,8 +54,19 @@ section .resume-entry {
 }
 
 .badge-description {
-    font-size: 1em;
-    color: #666;
+    color: #000000;
+}
+
+.badge a img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+}
+
+.badge a:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 980px) {

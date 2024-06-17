@@ -510,7 +510,7 @@ function addProjects(projects: Project[], language: string): void {
         projectsHTML += `
           <div class="badge">
             <a href=${elem.url} target='_blank'>
-              <img src='img/${elem.img}' alt="Imagem do Badge" class="badge-image">
+              <img src='img/${elem.img}' alt="Image" class="badge-image">
             </a>
             <h2 class="badge-title">${elem.title[language as keyof typeof elem.title]}</h2>
             <p class="badge-description">${elem.description[language as keyof typeof elem.description]}</p>

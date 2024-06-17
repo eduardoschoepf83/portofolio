@@ -361,7 +361,7 @@ function addProjects(projects, language) {
                 projectsHTML += `
           <div class="badge">
             <a href=${elem.url} target='_blank'>
-              <img src='img/${elem.img}' alt="Imagem do Badge" class="badge-image">
+              <img src='img/${elem.img}' alt="Image" class="badge-image">
             </a>
             <h2 class="badge-title">${elem.title[language]}</h2>
             <p class="badge-description">${elem.description[language]}</p>
