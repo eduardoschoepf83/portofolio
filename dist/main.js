@@ -231,7 +231,7 @@ function addSocialNetworksLinks(socialNetworks, selectedLanguage) {
                 // Concatenate HTML string for each social media link
                 socialNetworksConcat += `
           <a class="icon-link" href='${sm.link}' target='_blank'>
-            <i class='fa-brands ${iconName} fa-2xl' style='color: #F5F5F9'></i>
+            <i class='fa-brands ${iconName} fa-2xl' style='color: #00000'></i>
           </a>
         `;
             });

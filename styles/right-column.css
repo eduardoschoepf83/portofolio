@@ -53,10 +53,6 @@ section .resume-entry {
     padding: 10px;
 }
 
-.badge-description {
-    color: #000000;
-}
-
 .badge a img {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
