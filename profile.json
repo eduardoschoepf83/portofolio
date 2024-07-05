@@ -187,7 +187,7 @@
                 "fr": "Movies est une application web développée avec Java Spring Boot. Elle permet aux utilisateurs de parcourir les films les plus populaires en se basant sur l'API de The Movie Database (TMDb).",
                 "pt": "Movies é uma aplicação Web desenvolvida com Java Spring Boot. Permite aos utilizadores pesquisar filmes populares com base na API da base de dados de filmes (TMDb)."
             },
-            "img": "movies_webapp.png",
+            "img": "https://github-readme-stats.vercel.app/api/pin/?username=eduardoschoepf&repo=movies-webapp",
             "url": "https://github.com/eduardoschoepf/movies-webapp"
         },
         {
@@ -201,7 +201,7 @@
                 "fr": "Création d'une API avec des starters tels que Spring Web, Spring Data JPA pour la gestion de la persistance des données, et H2 Database pour une base de données en mémoire. Configuration d'un package Controller, d'un package Service pour la logique métier, d'un package Repository pour les interactions avec la base de données et d'un package model pour les entités. Dans le package Controller, création d'une classe pour gérer les opérations CRUD (Créer, Lire, Mettre à jour, Supprimer).",
                 "pt": "Criação de uma API com starters como Spring Web, Spring Data JPA para gerenciamento de persistência de dados e H2 Database para um banco de dados em memória. Configuração de um package Controller, um package Service para lógica de negócios, um package Repository para interações com o banco de dados e um package model para entidades. No package Controller, criação de uma classe para gerenciar operações CRUD (Criar, Ler, Atualizar, Excluir)."
             },
-            "img": "api_img.jpg",
+            "img": "https://github-readme-stats.vercel.app/api/pin/?username=eduardoschoepf&repo=api",
             "url": "https://github.com/eduardoschoepf/api"
         },
         {
@@ -215,7 +215,7 @@
                 "fr": "Création d'un outil de gestion des collaborateurs avec les fonctionnalités suivantes : afficher la liste des collaborateurs, ajouter un nouveau collaborateur, modifier ou supprimer un collaborateur. L'application se connecte à une API pour récupérer la liste des employés.",
                 "pt": "Criação de uma ferramenta de gerenciamento de funcionários com as seguintes funcionalidades: visualizar funcionários, adicionar um novo funcionário, modificar ou excluir um funcionário. O aplicativo se conecta a uma API para recuperar a lista de funcionários."
             },
-            "img": "employees_webapp.png",
+            "img": "https://github-readme-stats.vercel.app/api/pin/?username=eduardoschoepf&repo=webapp",
             "url": "https://github.com/eduardoschoepf/webapp"
         },
         {
@@ -229,7 +229,7 @@
                 "fr": "Cette application a été développée à la suite de mes études en React Native. L'application se connecte à l'API TMDB pour récupérer des informations sur les films et les séries télévisées.",
                 "pt": "Este aplicativo foi desenvolvido como resultado de meus estudos em React Native. O aplicativo se conecta à API do TMDB para recuperar informações sobre filmes e programas de TV."
             },
-            "img": "movies_app.png",
+            "img": "https://github-readme-stats.vercel.app/api/pin/?username=eduardoschoepf&repo=movies",
             "url": "https://github.com/eduardoschoepf/movies"
         }
     ],

@@ -508,12 +508,10 @@ function addProjects(projects: Project[], language: string): void {
       projects.forEach((elem) => {
         // Generate the HTML string for each project entry
         projectsHTML += `
-          <div class="badge">
+          <div>
             <a href=${elem.url} target='_blank'>
-              <img src='img/${elem.img}' alt="Image" class="badge-image">
+              <img src='${elem.img}' alt="Image" class="badge-image">
             </a>
-            <h2 class="badge-title">${elem.title[language as keyof typeof elem.title]}</h2>
-            <p class="badge-description">${elem.description[language as keyof typeof elem.description]}</p>
           </div>
         `;
 
