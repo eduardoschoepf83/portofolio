@@ -18,20 +18,6 @@
             "pt": "Trabalhando com desenvolvimento de software desde 2017, contribuí no desenvolvimento de aplicativos utilizando Javascript, NodeJS, PHP e frameworks como AngularJS. Atualmente estou aprimorando minhas habilidades em Java, com foco no framework Spring. Busco novas oportunidades no Brasil a partir de dezembro de 2024."
         }
     },
-    "mediaLinks": [
-        {
-            "name": "PT",
-            "address": "documents/cv_eduardo_schoepf_pt.pdf"
-        },
-        {
-            "name": "EN",
-            "address": "documents/cv_eduardo_schoepf_en.pdf"
-        },
-        {
-            "name": "FR",
-            "address": "documents/cv_eduardo_schoepf_fr.pdf"
-        }
-    ],
     "socialNetworks": [
         {
             "name": "linkedin",
@@ -268,7 +254,22 @@
     "certifications": [
         {
             "certificate": "",
-            "institution": "",
+            "href": "https://www.linkedin.com/learning/certificates/96d78831fcc0a542f2c4c8e6681ea8f43ab53bf082a701fb8ac66df5aab784ad?trk=share_certificate",
+            "completionYear": ""
+        },
+        {
+            "certificate": "",
+            "href": "https://courses.edx.org/certificates/6803c37d3b1e4c0ebeb9ada8ff04e510",
+            "completionYear": ""
+        },
+        {
+            "certificate": "",
+            "href": "https://courses.edx.org/certificates/9f30eeb0a2374e078fa44b34102bfe45",
+            "completionYear": ""
+        },
+        {
+            "certificate": "",
+            "href": "https://www.udemy.com/certificate/UC-4a981841-5dda-4083-a614-8f22e59d8a34",
             "completionYear": ""
         }
     ]
