@@ -51,12 +51,11 @@ function isSupportedLanguage(language) {
     return SUPPORTED_LANGUAGES.includes(language);
 }
 /**
- * Sets the language of the page and updates section titles and anchor texts accordingly.
+ * Updates the section titles based on the selected language.
  *
- * @param {string} lang - The language selected by the user.
- * @returns {void}
+ * @param {string} lang - The code of the selected language (e.g., 'fr' for French, 'en' for English).
  */
-function setLanguage(lang) {
+function updateSectionTitles(lang) {
     // Select all sections with an ID attribute
     const sections = document.querySelectorAll('section[id]');
     // Iterate over each section
@@ -65,21 +64,37 @@ function setLanguage(lang) {
         const id = section.id;
         // Get the translated title for the current section and language
         const title = translations[id][lang];
-        // Update the corresponding anchor text to the translated title, if exists
+        // Update the corresponding anchor text to the translated title, if it exists
         const anchor = document.querySelector(`a[href="#${id}"]`);
         if (anchor) {
             anchor.textContent = title.toUpperCase(); // Set anchor text to uppercase
         }
-        // Update the section title with the translated title, if exists
+        // Update the section title with the translated title, if it exists
         const sectionTitle = document.querySelector(`#${id} h2`);
         if (sectionTitle) {
             sectionTitle.textContent = title;
         }
     });
-    // Update the title of the certificate section with the translated title, if exists
-    const certificates = document.getElementById("certificates");
-    if (certificates) {
-        certificates.getElementsByTagName('h3')[0].innerText = translations["certificates"][lang];
+}
+/**
+ * Updates the styles of language selection buttons.
+ *
+ * @param {string} lang - The code of the selected language (e.g., 'fr' for French, 'en' for English).
+ */
+function updateButtonStyles(lang) {
+    // Select all buttons within the language-selector class
+    const buttons = document.querySelectorAll('.language-selector button');
+    // Iterate over each button to remove the 'selected-button' class
+    buttons.forEach(button => {
+        button.classList.remove('selected-button');
+    });
+    // Add the 'selected-button' class to the button corresponding to the selected language
+    const selectedButton = document.querySelector(`.language-selector button[data-lang="${lang}"]`);
+    if (selectedButton) {
+        selectedButton.classList.add('selected-button');
+    }
+    else {
+        console.error(`Button with data-lang="${lang}" not found.`);
     }
 }
 /**
@@ -406,21 +421,26 @@ function addCopyright() {
  *
  * @returns {void}
  */
-function setupLanguageButtons() {
+function main(lang) {
     try {
+        updateSectionTitles(lang);
+        updateButtonStyles(lang);
+        // Load and process JSON data for the detected or default language
+        loadAndProcessJSON(lang);
         // Select all language option buttons
-        const buttons = document.querySelectorAll('.language-selector button');
+        const buttons = document.querySelectorAll('.language-selector div button');
         // Add a click event listener to each button
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 // Determine the selected language based on the button text
-                const selectedLanguage = button.innerText.toUpperCase() === 'EN' ? 'en' :
+                const selectedLang = button.innerText.toUpperCase() === 'EN' ? 'en' :
                     button.innerText.toUpperCase() === 'FR' ? 'fr' :
                         'pt';
                 // Sets the language of titles for sections.   
-                setLanguage(selectedLanguage);
+                updateSectionTitles(selectedLang);
+                updateButtonStyles(selectedLang);
                 // Load and process JSON data for the selected language
-                loadAndProcessJSON(selectedLanguage);
+                loadAndProcessJSON(selectedLang);
             });
         });
     }
@@ -432,8 +452,4 @@ function setupLanguageButtons() {
  * Initializes the webpage by setting up language buttons and loading JSON data.
  */
 // Set up language buttons
-setupLanguageButtons();
-// Sets the language of titles for sections. 
-setLanguage('fr');
-// Load and process JSON data for the detected or default language
-loadAndProcessJSON('fr');
+main('fr');

@@ -4,7 +4,6 @@
     justify-content: center;
 }
 
-
 .language-selector div {
     width: 40%;
 }
@@ -18,6 +17,12 @@
 .language-selector button {
     height: 2rem;
     width: 3rem;
+}
+
+.selected-button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #0056b3;
 }
 
 @media (max-width: 980px) {
