@@ -3,7 +3,7 @@
 
 Este projeto visa fornecer um exemplo simples de portfólio para quem está procurando construir seu próprio portfólio pessoal. Trata-se de um site estático, e para personalizá-lo com seus dados, basta editar o arquivo `profile.json` localizado na raiz do projeto.
 
-Consulte a pagina aqui: https://eduardoschoepf.github.io/portfolio/
+Consulte a pagina aqui: https://eduardoschoepf.github.io/portfolio
 
 ## Partes Principais
 
