@@ -197,9 +197,9 @@
                 "pt": "App Web Java Spring"
             },
             "description": {
-                "en": "Creation of an employee management tool with the following functionalities: view employees, add a new employee, modify an employee and delete an employee. The application connects to an API to retrieve the list of employees.",
-                "fr": "Création d'un outil de gestion des collaborateurs avec les fonctionnalités suivantes : afficher la liste des collaborateurs, ajouter un nouveau collaborateur, modifier ou supprimer un collaborateur. L'application se connecte à une API pour récupérer la liste des employés.",
-                "pt": "Criação de uma ferramenta de gerenciamento de funcionários com as seguintes funcionalidades: visualizar funcionários, adicionar um novo funcionário, modificar ou excluir um funcionário. O aplicativo se conecta a uma API para recuperar a lista de funcionários."
+                "en": "Creation of a management tool interfaced with an API to fetch and manage an employee list.",
+                "fr": "Création d’un outil de gestion interfacé avec une API pour récupérer et gérer une liste d’employés.",
+                "pt": "Criação de uma ferramenta de gestão integrada com uma API para buscar e gerenciar uma lista de empregados."
             },
             "img": "https://github-readme-stats.vercel.app/api/pin/?username=eduardoschoepf&repo=webapp&layout=compact",
             "url": "https://github.com/eduardoschoepf/webapp"
